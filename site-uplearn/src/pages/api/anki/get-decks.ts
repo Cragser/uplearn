@@ -1,7 +1,7 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 
 import { AnkiDeck } from '@/src/shared/@types/anki.types';
-import {getDecks} from "@/src/server/api/anki/deck/get-decks";
+import {getDecksService} from "@/src/server/api/anki/deck/get-decks.service";
 
 
 
@@ -21,7 +21,7 @@ export default async function handler(
   }
 
   try {
-    const serverDecks = await getDecks();
+    const serverDecks = await getDecksService();
 
     if (serverDecks.length > 0) {
       return res.status(200).json(serverDecks);

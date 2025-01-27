@@ -13,7 +13,7 @@ interface DeckStatResponse {
 }
 
 
-export async function getDecks(): Promise<AnkiDeck[]> {
+export async function getDecksService(): Promise<AnkiDeck[]> {
 	try {
 		const ankiUrl = getAnkiConnectUrl();
 		const response = await axios.post(ankiUrl, {
