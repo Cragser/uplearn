@@ -1,7 +1,6 @@
 import { DeckSelector } from "@/src/client/components/deck-selector";
 import {getAnkiNextConnection} from "@/src/server/api/anki/anki-connection";
-
-
+import AnkiCardGallery from "@/src/client/module/anki/anki-card-gallery";
 
 async function getData() {
   const res = await fetch(getAnkiNextConnection('get-decks'));
@@ -16,6 +15,7 @@ export default async function HomePage() {
         Anki Decks
       </h1>
       <DeckSelector decks={decks} />
+        <AnkiCardGallery/>
     </div>
   );
 }

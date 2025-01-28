@@ -64,8 +64,8 @@ export async function findCards(deck: string): Promise<AnkiCard[]> {
 		question: cleanHtml(cardInfo.question),
 		answer: cleanHtml(cardInfo.answer),
 		lastReviewed: fromNow(new Date(cardInfo.mod * 1000)),
-		mod: cardInfo.mod,
-		rowQuestion: cardInfo.question,
-		rowAnswer: cardInfo.answer,
+		//mod: cardInfo.mod,
+		//rowQuestion: cardInfo.question,
+		//rowAnswer: cardInfo.answer,
 	}));
 }

@@ -8,7 +8,8 @@ export const getAnkiConnectUrl = () => {
 	return ANKI_API_URL;
 };
 
-type AnkiAction = 'get-decks';
+type AnkiAction = 'get-decks' | 'cards';
+// http://localhost:3000/api/anki/cards?deck=200%20Phrasal%20Verbs%20%20English%20-%20Spanish
 
 export const getAnkiNextConnection = (action: AnkiAction) => {
 	// http://localhost:3000/api/anki/get-decks

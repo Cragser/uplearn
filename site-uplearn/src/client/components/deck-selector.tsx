@@ -11,18 +11,28 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import {AnkiDeck} from "@/src/shared/@types/anki.types";
+import {useAnkiStore} from "@/src/client/store/anki/anki.store";
 
 
 interface DeckSelectorProps {
   decks: AnkiDeck[];
 }
 
-export function DeckSelector({ decks }: DeckSelectorProps) {
+export function DeckSelector({ decks }: Readonly<DeckSelectorProps>) {
   const [selectedDeck, setSelectedDeck] = React.useState<string>('');
+  const setDeckName = useAnkiStore((state) => state.setDeckName);
+
+  const onDeckChange = (deck: string) => {
+    setSelectedDeck(deck);
+    const selectedDeckName = decks.find(d => d.id.toString() === deck)?.name;
+    if (selectedDeckName) {
+      setDeckName(selectedDeckName);
+    }
+  };
 
   return (
     <div className="w-full max-w-xs">
-      <Select onValueChange={setSelectedDeck} value={selectedDeck}>
+      <Select onValueChange={onDeckChange} value={selectedDeck}>
         <SelectTrigger>
           <SelectValue placeholder="Select a deck" />
         </SelectTrigger>
@@ -37,11 +47,7 @@ export function DeckSelector({ decks }: DeckSelectorProps) {
           </SelectGroup>
         </SelectContent>
       </Select>
-      {selectedDeck && (
-        <p className="mt-4 text-sm text-gray-600">
-          Selected deck: {decks.find(d => d.id.toString() === selectedDeck)?.name}
-        </p>
-      )}
+
     </div>
   );
 }

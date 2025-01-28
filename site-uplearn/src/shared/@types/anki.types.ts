@@ -3,3 +3,8 @@ export interface AnkiDeck {
 	cards: number;
 	id: number;
 }
+export interface AnkiCard {
+	answer: string;
+	question: string;
+	lastReviewed: string;
+}
