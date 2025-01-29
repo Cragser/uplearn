@@ -1,6 +1,7 @@
 "use client";
 import { getMoodleNextConnection } from "@/src/server/api/moodle/moodle-connection";
 import { MoodleAction } from "@/src/shared/@types/moodle.api.types";
+import { moodleApiUrl } from "@/src/client/api/routes/moodle-api-url";
 
 interface FetchOptions {
   method?: string;
@@ -12,7 +13,7 @@ export async function fetchMoodleApi<T>(
   action: MoodleAction,
   options: FetchOptions = {},
 ): Promise<T> {
-  const url = new URL(getMoodleNextConnection(action));
+  const url = new URL(moodleApiUrl(action));
 
   // Add query parameters if provided
   if (options.params) {

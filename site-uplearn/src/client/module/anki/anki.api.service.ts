@@ -1,6 +1,7 @@
 "use client";
 import { getAnkiNextConnection } from "@/src/server/api/anki/anki-connection";
 import { AnkiAction } from "@/src/shared/@types/anki.api.types";
+import { ankiApiUrl } from "@/src/client/api/routes/anki-api-url";
 
 interface FetchOptions {
   method?: string;
@@ -12,7 +13,7 @@ export async function fetchAnkiApi<T>(
   action: AnkiAction,
   options: FetchOptions = {},
 ): Promise<T> {
-  const url = new URL(getAnkiNextConnection(action));
+  const url = new URL(ankiApiUrl(action));
 
   // Add query parameters if provided
   if (options.params) {
