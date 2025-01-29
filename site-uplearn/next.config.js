@@ -5,8 +5,7 @@ const nextConfig = {
     DOCKER_ENVIRONMENT: process.env.DOCKER_ENVIRONMENT,
     MOODLE_API_TOKEN: process.env.MOODLE_API_TOKEN,
     MOODLE_API_URL: process.env.MOODLE_API_URL,
-    SENTRY_DSN: process.env.SENTRY_DSN ,
-    SENTRY_AUTH_TOKEN: process.env.SENTRY_AUTH_TOKEN ,
+    SENTRY_DSN: process.env.SENTRY_DSN,
   },
 };
 
