@@ -42,3 +42,6 @@ next-env.d.ts
 #ignore file it name is todo.md
 todo.md
 /.idea/
+
+# Sentry Config File
+.env.sentry-build-plugin
