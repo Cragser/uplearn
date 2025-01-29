@@ -1,0 +1,104 @@
+{
+  "root": true,
+  "ignorePatterns": [
+    "node_modules/",
+    ".next/",
+    "dist/",
+    "components/",
+    "lib/",
+    "src/app/api/sentry-example-api",
+    "src/app/global-error.tsx",
+    "src/app/sentry-example-page/page.tsx",
+    "src/pages/_error.jsx",
+    // remove all json files
+    "**/*.json"
+  ],
+  "extends": [
+    "next/core-web-vitals",
+    "next/typescript",
+    "plugin:prettier/recommended"
+  ],
+  "plugins": [
+    "perfectionist",
+    "@typescript-eslint",
+    "filenames-simple",
+    "import",
+    "react",
+    "jsx-a11y"
+  ],
+  "settings": {
+    "import/resolver": {
+      "typescript": {
+        "project": "./tsconfig.json"
+      }
+    }
+  },
+  "overrides": [
+    {
+      "files": "*.json",
+      "parser": "jsonc-eslint-parser",
+      "rules": {}
+    },
+    {
+      "files": ["*.js", "*.jsx"],
+      "rules": {}
+    }
+  ],
+  "rules": {
+    "max-len": [
+      "error",
+      {
+        "code": 80,
+        "ignorePattern": "^import\\s.+\\sfrom\\s.+;$"
+      }
+    ],
+    "perfectionist/sort-objects": [
+      "error",
+      {
+        "type": "natural",
+        "order": "asc"
+      }
+    ],
+    "@typescript-eslint/naming-convention": [
+      "error",
+      {
+        "selector": "property",
+        "format": ["camelCase"]
+      }
+    ],
+    "filenames-simple/extension": "error",
+    "filenames-simple/naming-convention": [
+      "error",
+      {
+        "rule": "kebab-case"
+      }
+    ],
+    "filenames-simple/pluralize": [
+      "error",
+      {
+        "file": "singular",
+        "ignore": ["**/axios**"]
+      }
+    ],
+    "import/no-restricted-paths": [
+      "error",
+      {
+        "zones": [
+          {
+            "target": "./src/lib",
+            "from": "./src",
+            "except": ["./src/lib", "**/node_modules/**"],
+            "message": "Los módulos dentro de `src/lib` no deben depender de otros módulos fuera de `src/lib`, salvo librerías de terceros."
+          }
+        ]
+      }
+    ],
+    "no-restricted-syntax": [
+      "warn",
+      {
+        "selector": "CallExpression[arguments.0.type='Literal'][arguments.0.raw='true'], CallExpression[arguments.0.type='Literal'][arguments.0.raw='false']",
+        "message": "No se permite pasar banderas booleanas como parámetro a las funciones."
+      }
+    ]
+  }
+}

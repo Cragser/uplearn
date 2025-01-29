@@ -1,6 +1,6 @@
-'use client';
+"use client";
 
-import * as React from 'react';
+import * as React from "react";
 import {
   Select,
   SelectContent,
@@ -10,21 +10,20 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import {AnkiDeck} from "@/src/shared/@types/anki.types";
-import {useAnkiStore} from "@/src/client/store/anki/anki.store";
-
+import { AnkiDeck } from "@/src/shared/@types/anki.types";
+import { useAnkiStore } from "@/src/client/store/anki/anki.store";
 
 interface DeckSelectorProps {
   decks: AnkiDeck[];
 }
 
 export function DeckSelector({ decks }: Readonly<DeckSelectorProps>) {
-  const [selectedDeck, setSelectedDeck] = React.useState<string>('');
+  const [selectedDeck, setSelectedDeck] = React.useState<string>("");
   const setDeckName = useAnkiStore((state) => state.setDeckName);
 
   const onDeckChange = (deck: string) => {
     setSelectedDeck(deck);
-    const selectedDeckName = decks.find(d => d.id.toString() === deck)?.name;
+    const selectedDeckName = decks.find((d) => d.id.toString() === deck)?.name;
     if (selectedDeckName) {
       setDeckName(selectedDeckName);
     }
@@ -47,7 +46,6 @@ export function DeckSelector({ decks }: Readonly<DeckSelectorProps>) {
           </SelectGroup>
         </SelectContent>
       </Select>
-
     </div>
   );
 }

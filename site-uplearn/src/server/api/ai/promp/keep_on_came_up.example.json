@@ -22,12 +22,22 @@
           "multiple_choice": [
             {
               "question": "What does 'keep on' mean in this sentence: 'They decided to keep on hiking even though it started to snow.'?",
-              "options": ["To continue", "To stop", "To start again", "To relax"],
+              "options": [
+                "To continue",
+                "To stop",
+                "To start again",
+                "To relax"
+              ],
               "answer": "To continue"
             },
             {
               "question": "Choose the correct meaning of 'keep on': 'She kept on calling until someone answered.'",
-              "options": ["To persist", "To give up", "To slow down", "To pause"],
+              "options": [
+                "To persist",
+                "To give up",
+                "To slow down",
+                "To pause"
+              ],
               "answer": "To persist"
             }
           ],
@@ -39,7 +49,12 @@
             },
             {
               "sentence": "He ___ / ___ asking the same question, even though he already knew the answer.",
-              "options": ["kept / on", "stopped / off", "gave / up", "turned / on"],
+              "options": [
+                "kept / on",
+                "stopped / off",
+                "gave / up",
+                "turned / on"
+              ],
               "answer": "kept / on"
             }
           ]
@@ -81,7 +96,12 @@
           "multiple_choice": [
             {
               "question": "What does 'came up' mean in this sentence: 'The idea came up during our brainstorming session.'?",
-              "options": ["Was mentioned", "Was ignored", "Was dismissed", "Was delayed"],
+              "options": [
+                "Was mentioned",
+                "Was ignored",
+                "Was dismissed",
+                "Was delayed"
+              ],
               "answer": "Was mentioned"
             },
             {
@@ -98,7 +118,12 @@
             },
             {
               "sentence": "A young boy ___ / ___ to us asking for help with his dog.",
-              "options": ["came / up", "got / in", "looked / over", "turned / off"],
+              "options": [
+                "came / up",
+                "got / in",
+                "looked / over",
+                "turned / off"
+              ],
               "answer": "came / up"
             }
           ]
