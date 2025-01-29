@@ -2,12 +2,7 @@ import { getAnkiConnectUrl } from "@/src/server/api/anki/anki-connection";
 import axios from "axios";
 import { fromNow } from "@/src/shared/util/date/distance-date";
 import { cleanHtml } from "@/src/shared/util/html/clean-html";
-
-interface AnkiCard {
-  question: string;
-  answer: string;
-  lastReviewed: number;
-}
+import { AnkiCard } from "@/src/shared/@types/anki.types";
 
 interface Field {
   value: string;
@@ -40,8 +35,47 @@ interface CardInfo {
   mod: number;
 }
 
+const mockCards: AnkiCard[] = [
+  {
+    answer: "To stop doing something suddenly",
+    errorRate: 15,
+    failed: 3,
+    lastReviewed: "2 days ago",
+    nextReview: "tomorrow",
+    question: "break off",
+    remainingWork: 2,
+    repeat: 5,
+    tried: 20,
+  },
+  {
+    answer: "To search for and find something by chance",
+    errorRate: 8,
+    failed: 1,
+    lastReviewed: "5 days ago",
+    nextReview: "in 3 days",
+    question: "come across",
+    remainingWork: 1,
+    repeat: 3,
+    tried: 12,
+  },
+  {
+    answer: "To continue doing something despite difficulties",
+    errorRate: 25,
+    failed: 5,
+    lastReviewed: "1 week ago",
+    nextReview: "today",
+    question: "carry on",
+    remainingWork: 3,
+    repeat: 8,
+    tried: 15,
+  },
+];
+
 export async function findCards(deck: string): Promise<AnkiCard[]> {
   const ankiUrl = getAnkiConnectUrl();
+  if (ankiUrl === false) {
+    return mockCards;
+  }
   // is:review rated:7
   const findCardsResponse = await axios.post(ankiUrl, {
     action: "findCards",

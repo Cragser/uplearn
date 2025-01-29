@@ -7,6 +7,9 @@ export const getAnkiConnectUrl = () => {
   if (IS_DOCKER) {
     return "http://host.docker.internal:8765";
   }
+  if (ANKI_API_URL === "vercel") {
+    return false;
+  }
   return ANKI_API_URL;
 };
 
