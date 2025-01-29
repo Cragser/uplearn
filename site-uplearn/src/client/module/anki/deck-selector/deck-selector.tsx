@@ -12,15 +12,22 @@ import {
 } from "@/components/ui/select";
 import { AnkiDeck } from "@/src/shared/@types/anki.types";
 import { useAnkiStore } from "@/src/client/store/anki/anki.store";
+import { useQuery } from "@tanstack/react-query";
+import { deckOptions } from "@/src/client/module/anki/deck-selector/deck.options";
 
-interface DeckSelectorProps {
-  decks: AnkiDeck[];
-}
-
-export function DeckSelector({ decks }: Readonly<DeckSelectorProps>) {
+export function DeckSelector() {
   const [selectedDeck, setSelectedDeck] = React.useState<string>("");
   const setDeckName = useAnkiStore((state) => state.setDeckName);
+  const { data, isError, error } = useQuery(deckOptions);
+  const decks = Array.isArray(data) ? data : [];
 
+  if (isError) {
+    return (
+      <div className="text-center text-red-500">
+        <p>Error loading decks: {error?.message || "An error occurred"}</p>
+      </div>
+    );
+  }
   const onDeckChange = (deck: string) => {
     setSelectedDeck(deck);
     const selectedDeckName = decks.find((d) => d.id.toString() === deck)?.name;
@@ -38,11 +45,17 @@ export function DeckSelector({ decks }: Readonly<DeckSelectorProps>) {
         <SelectContent>
           <SelectGroup>
             <SelectLabel>Available Decks</SelectLabel>
-            {decks.map((deck) => (
-              <SelectItem key={deck.id} value={deck.id.toString()}>
-                {deck.name}
+            {decks?.length > 0 ? (
+              decks.map((deck) => (
+                <SelectItem key={deck.id} value={deck.id.toString()}>
+                  {deck.name}
+                </SelectItem>
+              ))
+            ) : (
+              <SelectItem value="no-decks" disabled>
+                No decks available
               </SelectItem>
-            ))}
+            )}
           </SelectGroup>
         </SelectContent>
       </Select>

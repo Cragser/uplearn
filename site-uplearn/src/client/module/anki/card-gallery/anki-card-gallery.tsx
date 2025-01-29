@@ -2,14 +2,22 @@
 
 import { CardDemo } from "@/src/client/components/anki/card/anki-card";
 import { useAnkiStore } from "@/src/client/store/anki/anki.store";
-import { useSuspenseQuery } from "@tanstack/react-query";
-import { createCardsOptions } from "@/src/client/module/anki/card.options";
+import { useQuery } from "@tanstack/react-query";
+import { createCardsOptions } from "@/src/client/module/anki/card-gallery/card.options";
 import { AnkiCard } from "@/src/shared/@types/anki.types";
 
 export default function AnkiCardGallery() {
   const { deckName } = useAnkiStore((state) => state);
-  const { data } = useSuspenseQuery(createCardsOptions(deckName));
+  const { data, isError, error } = useQuery(createCardsOptions(deckName));
   const cards = Array.isArray(data) ? data : [];
+
+  if (isError) {
+    return (
+      <div className="text-center text-red-500">
+        <p>Error loading cards: {error?.message || "An error occurred"}</p>
+      </div>
+    );
+  }
 
   return (
     <section>
@@ -26,7 +34,7 @@ export default function AnkiCardGallery() {
       ) : (
         <section className="grid grid-cols-3 gap-4">
           {cards
-            .sort((a, b) => (b.errorRate || 0) - (a.errorRate || 0))
+            .toSorted((a, b) => (b.errorRate || 0) - (a.errorRate || 0))
             .slice(0, 12)
             .map((card: AnkiCard) => (
               <CardDemo key={card.answer} {...card} />

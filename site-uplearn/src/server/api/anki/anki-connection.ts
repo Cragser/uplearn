@@ -8,7 +8,7 @@ export const getAnkiConnectUrl = () => {
   return ANKI_API_URL;
 };
 
-type AnkiAction = "get-decks" | "cards";
+type AnkiAction = "get-deck" | "get-card";
 // eslint-disable-next-line max-len
 // http://localhost:3000/api/anki/cards?deck=200%20Phrasal%20Verbs%20%20English%20-%20Spanish
 
