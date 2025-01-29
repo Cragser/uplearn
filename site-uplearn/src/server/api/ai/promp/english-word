@@ -1,0 +1,56 @@
+
+[TASK]
+To effectively utilize the dataset featuring idiomatic expressions and phrasal verbs for language learning, create a comprehensive educational resource structured as follows:
+1. words array with each term as an object:
+1.1 Name: The name of the term.
+1.2. Glossary:
+    - Include the primary, clear, and concise definition of each idiomatic expression or phrasal verb.
+
+1.3. Table:
+    - Provide a detailed table for each term that includes:
+      - "Meaning": A clear and straightforward definition illustrating usage.
+      - "Context": An example sentence showcasing the term in a naturally occurring English sentence.
+      - "Related": List three to four closely related terms or synonyms to deepen understanding.
+
+1.4. Exercises:
+    - Develop engaging and educational exercises for each term:
+      - "Multiple-choice": Create two questions per term, focusing on understanding and applying meanings in context. Each question should have four answer options, only one of which is correct.
+      - "Word-choice": Formulate two fill-in-the-blank sentences for each term that require selecting the correct word or phrase from given options to complete the sentence accurately.
+
+1.5. Amplified Content:
+    - "Short Story": Craft a concise, engaging original story that uses all the provided terms effectively, spanning 5-8 sentences, to demonstrate practical usage.
+    - "Movie Examples": Include three authentic movie quotes for each term that illustrate its usage (formatted as "*quote*" - Movie (Year)).
+    - "Song Examples": Present three snippets from song lyrics for each term demonstrating its usage (formatted as "*lyric*" - Song by Artist).
+
+2. exercises: an array containing exercises with at least two input words that are designed to confuse the user. Use at least two words from input words array.
+2.1. Multiple-choice:
+    - Create two questions per term, focusing on understanding and applying meanings in context. Each question should have four answer options, only one of which is correct.
+    - Ensure the questions are clear, concise, and easy to understand.
+    - Include a mix of multiple-choice questions and word-choice exercises to cater to different learning styles.
+    - Provide feedback to the user on their correct answer.
+
+Technical Requirements:
+    - Ensure the JSON structure is clean, well-organized, and free of syntax errors.
+    - Maintain clarity and consistency in English for all entries.
+
+Objective:
+    - Aim to create a versatile, interactive educational tool that caters to varied levels of language proficiency, ideal for integrating into learning apps or platforms, enhancing both engagement and effective vocabulary acquisition.
+
+
+This new, enhanced instruction embraces a structured and detailed approach that leverages the dataset's educational format to foster a practical understanding of idiomatic expressions and phrasal verbs, suitable for users at different stages of learning.
+---
+
+[FORMAT]
+Follow the following format:
+
+[INPUT]
+terms: List of terms to be included in the JSON object.
+[OUTPUT]
+words: Incude an array of objects, each object representing a term.
+words.name: The name of the term.
+words.glossary: Includes the primary meaning of each term.
+words.table: Organized information where one row per meaning includes 'Meaning', 'Context', and 'Related' terms.
+words.exercises: Contains multiple-choice and word-choice questions focused on the contextual usage of each term.
+words.content: Includes a short story and examples from movies and songs that use all the terms.
+exercises: an array containing exercises with at least two input words that are designed to confuse the user. Use at least two words from input words array.
+exercise.multiple-choice: Create two questions per term, focusing on understanding and applying meanings in context. Each question should have four answer options, only one of which is correct.

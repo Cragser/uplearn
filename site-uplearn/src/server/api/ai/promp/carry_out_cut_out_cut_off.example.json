@@ -1,0 +1,272 @@
+{
+  "words": [
+    {
+      "name": "carry out",
+      "glossary": "To perform, execute, or accomplish a task, plan, or order.",
+      "table": [
+        {
+          "Meaning": "To fulfill orders or instructions.",
+          "Context": "The police carried out the judge’s orders to investigate the case.",
+          "Related": ["execute", "follow"]
+        },
+        {
+          "meaning": "To perform or execute a task.",
+          "context": "The teacher carried out the lesson plan.",
+          "related": ["execute", "perform", "follow"]
+        },
+        {
+          "meaning": "To conduct research or studies.",
+          "context": "The scientists carried out a series of experiments to test their hypothesis.",
+          "related": ["execute", "perform", "follow"]
+        }
+      ],
+      "exercises": {
+        "multiple-choice": [
+          {
+            "question": "What does 'carry out' mean?",
+            "options": [
+              "To execute or perform a task",
+              "To postpone something",
+              "To refuse to participate",
+              "To destroy something"
+            ],
+            "answer": "To execute or perform a task"
+          },
+          {
+            "question": "Which sentence correctly uses 'carry out'?",
+            "options": [
+              "We will carry out the new policy starting next month.",
+              "He carried out his groceries to the car.",
+              "She carried out an old chair from her house.",
+              "The storm carried out trees from the ground."
+            ],
+            "answer": "We will carry out the new policy starting next month."
+          }
+        ],
+        "word-choice": [
+          {
+            "sentence": "The manager asked the employees to _______ the project before the deadline.",
+            "options": ["carry out", "cut off", "take in", "run away"],
+            "answer": "carry out"
+          },
+          {
+            "sentence": "Doctors need to _______ tests before making a diagnosis.",
+            "options": ["carry out", "break down", "give away", "take over"],
+            "answer": "carry out"
+          }
+        ]
+      },
+      "content": {
+        "short_story": "James had an important task to carry out at work, but his internet connection was suddenly cut off due to a storm. Frustrated, he decided to call his service provider. They advised him to cut out unnecessary devices using the network to speed things up. Following their advice, he managed to finish his work just in time.",
+        "movie_examples": [
+          "\"I have orders to carry out.\" - Mission: Impossible (1996)",
+          "\"We need to carry out the mission before sunset.\" - Zero Dark Thirty (2012)",
+          "\"Can you carry out the plan without getting caught?\" - The Dark Knight (2008)"
+        ],
+        "song_examples": [
+          "\"I gotta carry out my dreams tonight.\" - Carry On by Fun.",
+          "\"We carried out love like a battle.\" - The Kill by 30 Seconds to Mars",
+          "\"You carried out my heart, left me behind.\" - Let It Be by The Beatles"
+        ]
+      }
+    },
+    {
+      "name": "cut (something) out",
+      "glossary": "To stop doing or using something; to remove something completely.",
+      "table": [
+        {
+          "Meaning": "To remove or stop doing something.",
+          "Context": "My doctor told me to cut out sugar from my diet.",
+          "Related": ["eliminate", "stop", "quit", "remove"]
+        },
+        {
+          "Meaning": "Physically to remove something by cutting it off.",
+          "Context": "She cut out the tree and planted it again.",
+          "Related": ["cut off", "remove", "destroy", "break"]
+        }
+      ],
+      "exercises": {
+        "multiple-choice": [
+          {
+            "question": "What does 'cut out' mean?",
+            "options": [
+              "To stop doing something",
+              "To continue an action",
+              "To add something",
+              "To repair something"
+            ],
+            "answer": "To stop doing something"
+          },
+          {
+            "question": "Which sentence correctly uses 'cut out'?",
+            "options": [
+              "I cut out the junk food from my diet.",
+              "She cut out the tree and planted it again.",
+              "He cut out the road to reach the destination.",
+              "They cut out the stairs to make them higher."
+            ],
+            "answer": "I cut out the junk food from my diet."
+          }
+        ],
+        "word-choice": [
+          {
+            "sentence": "If you want to lose weight, you should _______ sugary drinks.",
+            "options": ["cut out", "carry out", "take over", "break down"],
+            "answer": "cut out"
+          },
+          {
+            "sentence": "The teacher told the students to _______ the noise immediately.",
+            "options": ["cut out", "set up", "get through", "come up"],
+            "answer": "cut out"
+          }
+        ]
+      },
+      "content": {
+        "short_story": "Emily wanted to improve her health, so she decided to cut out junk food and start exercising. At first, it was tough, but she gradually got used to the change. She even managed to convince her family to cut out sugary drinks. In a few months, she felt healthier and more energetic.",
+        "movie_examples": [
+          "\"Cut out the nonsense and listen to me!\" - Good Will Hunting (1997)",
+          "\"I need to cut out caffeine, I’m too jittery.\" - The Devil Wears Prada (2006)",
+          "\"You better cut it out before she hears you!\" - Home Alone (1990)"
+        ],
+        "song_examples": [
+          "\"Cut out my heart, but I still feel.\" - Fix You by Coldplay",
+          "\"I’m cutting out all the noise.\" - Rolling in the Deep by Adele",
+          "\"Cut out the pain and let me breathe.\" - Someone Like You by Adele"
+        ]
+      }
+    },
+    {
+      "name": "cut (something) off",
+      "glossary": "To stop the supply of something; to disconnect or remove completely.",
+      "table": [
+        {
+          "Meaning": "To stop or interrupt something.",
+          "Context": "The storm cut off electricity in the whole neighborhood.",
+          "Related": ["disconnect", "stop", "block", "interrupt"]
+        },
+        {
+          "Meaning": "To block or isolate someone or something.",
+          "Context": "The storm cut off the village from the rest of the country.",
+          "Related": ["block", "isolate", "separate", "restrict"]
+        }
+      ],
+      "exercises": {
+        "multiple-choice": [
+          {
+            "question": "What does 'cut off' mean?",
+            "options": [
+              "To disconnect or stop something",
+              "To increase supply",
+              "To extend something",
+              "To protect something"
+            ],
+            "answer": "To disconnect or stop something"
+          },
+          {
+            "question": "Which sentence correctly uses 'cut off'?",
+            "options": [
+              "The phone company cut off my service because I forgot to pay.",
+              "She cut off a piece of cake and ate it.",
+              "They cut off the store by painting its walls.",
+              "He cut off the road to make it longer."
+            ],
+            "answer": "The phone company cut off my service because I forgot to pay."
+          }
+        ],
+        "word-choice": [
+          {
+            "sentence": "The government decided to _______ funding for the program.",
+            "options": ["cut off", "carry out", "set up", "bring in"],
+            "answer": "cut off"
+          },
+          {
+            "sentence": "Heavy rain _______ the village from the rest of the city.",
+            "options": ["cut off", "take down", "go over", "put up"],
+            "answer": "cut off"
+          }
+        ]
+      },
+      "content": {
+        "short_story": "A severe storm caused chaos in the town. It cut off electricity and water supplies, leaving everyone in darkness. Neighbors gathered to help each other, cutting out unnecessary power usage and pooling resources. Despite the challenges, the community came together and carried out rescue efforts efficiently.",
+        "movie_examples": [
+          "\"They cut off our supplies!\" - Saving Private Ryan (1998)",
+          "\"The villain cut off the hero’s escape route.\" - The Avengers (2012)",
+          "\"I was cut off mid-sentence!\" - The Social Network (2010)"
+        ],
+        "song_examples": [
+          "\"They cut off my light, now I live in the dark.\" - Boulevard of Broken Dreams by Green Day",
+          "\"Cut off from love, now I’m all alone.\" - Love the Way You Lie by Eminem ft. Rihanna",
+          "\"Cut off my phone, I don’t wanna talk.\" - Hello by Adele"
+        ]
+      }
+    }
+  ],
+  "exercises": [
+    {
+      "multiple_choice": [
+        {
+          "question": "Which sentence correctly uses 'carry out'?",
+          "options": [
+            "The doctor told me to carry out sugar from my diet.",
+            "We need to carry out an important project before the deadline.",
+            "The storm carried out electricity in the whole neighborhood.",
+            "She carried out all the unnecessary distractions from her schedule."
+          ],
+          "answer": "We need to carry out an important project before the deadline."
+        },
+        {
+          "question": "What does 'cut off' mean in this sentence: 'The government decided to cut off the financial support for the program'?",
+          "options": [
+            "To execute a plan",
+            "To remove something completely",
+            "To stop the supply of something",
+            "To perform an action"
+          ],
+          "answer": "To stop the supply of something"
+        },
+        {
+          "question": "Which of the following sentences is incorrect?",
+          "options": [
+            "She decided to cut out processed food from her diet.",
+            "The manager will carry out the new policies next month.",
+            "The heavy rain cut out the village from the rest of the city.",
+            "They had to cut off the power due to the maintenance work."
+          ],
+          "answer": "The heavy rain cut out the village from the rest of the city."
+        },
+        {
+          "question": "What is the best meaning of 'cut out' in this sentence: 'He was advised to cut out smoking for his health'?",
+          "options": [
+            "To remove or stop doing something",
+            "To stop the supply of something",
+            "To execute a plan",
+            "To perform an experiment"
+          ],
+          "answer": "To remove or stop doing something"
+        }
+      ],
+      "word_choice": [
+        {
+          "sentence": "Due to a budget issue, the government had to ___ / ___ funding for the project.",
+          "options": ["carry / out", "cut / off", "cut / out", "take / away"],
+          "answer": "cut / off"
+        },
+        {
+          "sentence": "The scientist is planning to ___ / ___ an important experiment.",
+          "options": ["carry / out", "cut / out", "cut / off", "bring / in"],
+          "answer": "carry / out"
+        },
+        {
+          "sentence": "After years of drinking coffee, John finally decided to ___ / ___ caffeine from his diet.",
+          "options": ["cut / off", "carry / out", "cut / out", "take / away"],
+          "answer": "cut / out"
+        },
+        {
+          "sentence": "The company had to ___ / ___ their internet service because they didn't pay the bills.",
+          "options": ["carry / out", "cut / out", "cut / off", "bring / down"],
+          "answer": "cut / off"
+        }
+      ]
+    }
+  ]
+}

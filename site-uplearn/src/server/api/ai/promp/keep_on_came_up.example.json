@@ -1,0 +1,150 @@
+{
+  "words": [
+    {
+      "name": "keep on",
+      "glossary": {
+        "primary_meaning": "To continue doing something, often in spite of difficulties."
+      },
+      "table": [
+        {
+          "meaning": "To persist or continue doing an action.",
+          "context": "Despite the rain, they decided to keep on running.",
+          "related": ["continue", "persist", "carry on", "proceed"]
+        },
+        {
+          "meaning": "To repeatedly do something, often annoyingly.",
+          "context": "He keeps on asking the same question over and over.",
+          "related": ["repeat", "nag", "persevere", "maintain"]
+        }
+      ],
+      "exercises": [
+        {
+          "multiple_choice": [
+            {
+              "question": "What does 'keep on' mean in this sentence: 'They decided to keep on hiking even though it started to snow.'?",
+              "options": ["To continue", "To stop", "To start again", "To relax"],
+              "answer": "To continue"
+            },
+            {
+              "question": "Choose the correct meaning of 'keep on': 'She kept on calling until someone answered.'",
+              "options": ["To persist", "To give up", "To slow down", "To pause"],
+              "answer": "To persist"
+            }
+          ],
+          "word_choice": [
+            {
+              "sentence": "If you want to improve, you need to ___ / ___ practicing every day.",
+              "options": ["keep / on", "give / up", "go / off", "start / over"],
+              "answer": "keep / on"
+            },
+            {
+              "sentence": "He ___ / ___ asking the same question, even though he already knew the answer.",
+              "options": ["kept / on", "stopped / off", "gave / up", "turned / on"],
+              "answer": "kept / on"
+            }
+          ]
+        }
+      ],
+      "content": {
+        "short_story": "Despite facing criticism, Mark decided to keep on working on his invention. He knew it would be worth it in the end. His friends doubted him, but he kept on pushing forward, ignoring the negativity. Eventually, his persistence paid off, and his project became a success.",
+        "movie_examples": [
+          "\"Keep on moving forward, no matter what happens.\" - Rocky Balboa (2006)",
+          "\"If you keep on trying, you’ll succeed someday.\" - The Pursuit of Happyness (2006)",
+          "\"We can’t stop here; we have to keep on going.\" - Lord of the Rings: The Two Towers (2002)"
+        ],
+        "song_examples": [
+          "\"Keep on running, keep on hiding.\" - Song by Spencer Davis Group",
+          "\"You gotta keep on keeping on.\" - Song by Curtis Mayfield",
+          "\"Keep on dancing to the rock and roll.\" - Song by Bay City Rollers"
+        ]
+      }
+    },
+    {
+      "name": "came up",
+      "glossary": {
+        "primary_meaning": "To occur or arise, often unexpectedly."
+      },
+      "table": [
+        {
+          "meaning": "To happen or be mentioned.",
+          "context": "The topic of vacation plans came up during the meeting.",
+          "related": ["arise", "occur", "be mentioned", "emerge"]
+        },
+        {
+          "meaning": "To approach or move closer to someone or something.",
+          "context": "A stranger came up to her and asked for directions.",
+          "related": ["approach", "move closer", "advance", "near"]
+        }
+      ],
+      "exercises": [
+        {
+          "multiple_choice": [
+            {
+              "question": "What does 'came up' mean in this sentence: 'The idea came up during our brainstorming session.'?",
+              "options": ["Was mentioned", "Was ignored", "Was dismissed", "Was delayed"],
+              "answer": "Was mentioned"
+            },
+            {
+              "question": "Choose the correct meaning of 'came up': 'She came up to the podium to give her speech.'",
+              "options": ["Approached", "Ran away", "Avoided", "Waited"],
+              "answer": "Approached"
+            }
+          ],
+          "word_choice": [
+            {
+              "sentence": "During the conversation, the topic of climate change ___ / ___ unexpectedly.",
+              "options": ["came / up", "gave / in", "got / over", "moved / on"],
+              "answer": "came / up"
+            },
+            {
+              "sentence": "A young boy ___ / ___ to us asking for help with his dog.",
+              "options": ["came / up", "got / in", "looked / over", "turned / off"],
+              "answer": "came / up"
+            }
+          ]
+        }
+      ],
+      "content": {
+        "short_story": "During the meeting, the issue of budget cuts came up unexpectedly. Sarah wasn’t prepared, but she handled it calmly. Later that day, a colleague came up to her and complimented her professionalism. She felt proud of how she managed to stay composed under pressure.",
+        "movie_examples": [
+          "\"The idea came up in our last meeting.\" - The Social Network (2010)",
+          "\"A problem came up, so I couldn’t make it.\" - Spider-Man 2 (2004)",
+          "\"He came up to me and introduced himself.\" - Titanic (1997)"
+        ],
+        "song_examples": [
+          "\"The sun came up and I started my day.\" - Song by John Mayer",
+          "\"Something came up, so I couldn’t stay.\" - Song by Taylor Swift",
+          "\"He came up with the perfect excuse.\" - Song by Maroon 5"
+        ]
+      }
+    }
+  ],
+  "exercises": [
+    {
+      "multiple_choice": [
+        {
+          "question": "What does the phrasal verb mean in this sentence: 'He ___ with a new idea during the brainstorming session.'?",
+          "options": ["Came up", "Keep on", "Put on", "Got on"],
+          "answer": "Came up"
+        },
+        {
+          "question": "What is the correct phrasal verb in this sentence: 'Despite the challenges, they decided to ___ working on the project.'?",
+          "options": ["Keep on", "Came up", "Put on", "Get on"],
+          "answer": "Keep on"
+        }
+      ],
+      "word_choice": [
+        {
+          "sentence": "During our conversation, a controversial topic ___ / ___ unexpectedly.",
+          "options": ["came / up", "kept / on", "put / on", "got / off"],
+          "answer": "came / up"
+        },
+        {
+          "sentence": "She decided to ___ / ___ working even though it was getting late.",
+          "options": ["keep / on", "came / up", "put / on", "get / off"],
+          "answer": "keep / on"
+        }
+      ]
+    }
+  ]
+}

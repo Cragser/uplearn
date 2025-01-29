@@ -39,5 +39,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
-#ignore file it name is todo.md 
+#ignore file it name is todo.md
 todo.md
+/.idea/
