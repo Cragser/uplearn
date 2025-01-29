@@ -51,7 +51,26 @@ npm-debug.log
 yarn-debug.log
 yarn-error.log
 
-/moodle_data/
+# Data directories
+#/moodle_data/
 /postgresql_data/
-/__pycache__/
 /logs/
+
+# Runtime files
+/__pycache__/
+*.pyc
+*.pyo
+
+# Moodle specific directories
+/moodledata/filedir/
+/moodledata/cache/
+/moodledata/localcache/
+/moodledata/temp/
+/moodledata/trashdir/
+/moodledata/sessions/
+
+# Moodle config and runtime files
+# config.php
+# version.php
+# install.php
+# .htaccess
