@@ -12,9 +12,18 @@ interface DeckStatResponse {
   total_in_deck: number;
 }
 
+const mockDecks: AnkiDeck[] = [
+  { cards: 100, id: 1, name: "Spanish Vocabulary" },
+  { cards: 50, id: 2, name: "Programming Concepts" },
+  { cards: 75, id: 3, name: "Mathematics" },
+];
+
 export async function getDeckService(): Promise<AnkiDeck[]> {
   try {
     const ankiUrl = getAnkiConnectUrl();
+    if (ankiUrl === false) {
+      return mockDecks;
+    }
     const response = await axios.post(ankiUrl, {
       action: "deckNames",
       version: 6,
@@ -24,7 +33,7 @@ export async function getDeckService(): Promise<AnkiDeck[]> {
     const decks: AnkiDeck[] = [];
 
     // Add a delay before the next request to prevent connection issues
-    await new Promise((resolve) => setTimeout(resolve, 1000));
+    await new Promise((resolve) => setTimeout(resolve, 100));
 
     // Get stats for all decks in a single request
     const responseStats = await axios.post(ankiUrl, {
