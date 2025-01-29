@@ -43,11 +43,12 @@ interface CardInfo {
 
 export async function findCards(deck: string): Promise<AnkiCard[]> {
 	const ankiUrl = getAnkiConnectUrl();
+	// is:review rated:7
 	const findCardsResponse = await axios.post(ankiUrl, {
 		action: "findCards",
 		version: 6,
 		"params": {
-			"query": `deck:"${deck}" is:review rated:7`
+			"query": `deck:"${deck}" `
 		}
 	});
 	const cardIds = findCardsResponse.data.result;
@@ -64,6 +65,20 @@ export async function findCards(deck: string): Promise<AnkiCard[]> {
 		question: cleanHtml(cardInfo.question),
 		answer: cleanHtml(cardInfo.answer),
 		lastReviewed: fromNow(new Date(cardInfo.mod * 1000)),
+		// due -- fecha para próxima revisión
+		// reps -- número de repeticiones
+		// lapses -- número de repeticiones fallidas
+		// left -- número de repeticiones restantes
+		// nextReview: new Date(cardInfo.due * 1000).toLocaleDateString(),
+		// repeat: cardInfo.lapses,
+		// tried: cardInfo.reps,
+		// failed: cardInfo.left,
+		errorRate: Math.round(cardInfo.lapses / cardInfo.reps * 100) ,
+		remainingWork: cardInfo.left,
+
+
+
+
 		//mod: cardInfo.mod,
 		//rowQuestion: cardInfo.question,
 		//rowAnswer: cardInfo.answer,
