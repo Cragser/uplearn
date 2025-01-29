@@ -9,7 +9,7 @@ Sentry.init({
   // Setting this option to true will print useful information to the console while you're setting up Sentry.
   debug: false,
 
-  dsn: "https://f8f8f87eb6011826475bbe86d238e1b2@o4508724280098816.ingest.us.sentry.io/4508724281737216",
+  dsn: process.env.SENTRY_DSN,
 
   // Define how likely traces are sampled. Adjust this value in production, or use tracesSampler for greater control.
   tracesSampleRate: 1,
