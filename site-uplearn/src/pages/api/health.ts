@@ -1,13 +1,18 @@
-import { NextApiRequest, NextApiResponse } from 'next';
+import { NextApiRequest, NextApiResponse } from "next";
 
 type ResponseData = {
   status: string;
   timestamp: string;
 };
 
-export default function handler(req: NextApiRequest, res: NextApiResponse<ResponseData>) {
-  if (req.method !== 'GET') {
-    res.status(405).json({ status: 'error', timestamp: new Date().toISOString() });
+export default function handler(
+  req: NextApiRequest,
+  res: NextApiResponse<ResponseData>,
+) {
+  if (req.method !== "GET") {
+    res
+      .status(405)
+      .json({ status: "error", timestamp: new Date().toISOString() });
     return;
   }
 
@@ -15,13 +20,14 @@ export default function handler(req: NextApiRequest, res: NextApiResponse<Respon
     // Here you can add actual health checks like database connectivity
     // For now, we'll return a simple OK status
     res.status(200).json({
-      status: 'ok',
-      timestamp: new Date().toISOString()
+      status: "ok",
+      timestamp: new Date().toISOString(),
     });
   } catch (error) {
+    console.log(error);
     res.status(500).json({
-      status: 'error',
-      timestamp: new Date().toISOString()
+      status: "error",
+      timestamp: new Date().toISOString(),
     });
   }
 }

@@ -1,6 +1,6 @@
-'use client';
+"use client";
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from "react";
 
 interface HealthStatus {
   status: string;
@@ -14,12 +14,12 @@ export default function HealthPage() {
   useEffect(() => {
     const checkHealth = async () => {
       try {
-        const response = await fetch('/api/health');
+        const response = await fetch("/api/health");
         const data = await response.json();
         setHealth(data);
         setError(null);
       } catch (err) {
-        setError('Failed to fetch health status');
+        setError("Failed to fetch health status" + err);
         setHealth(null);
       }
     };
@@ -39,17 +39,24 @@ export default function HealthPage() {
         <div className="space-y-2">
           <div className="flex items-center space-x-2">
             <span className="font-semibold">Status:</span>
-            <span className={health.status === 'ok' ? 'text-green-500' : 'text-red-500'}>
+            <span
+              className={
+                health.status === "ok" ? "text-green-500" : "text-red-500"
+              }
+            >
               {health.status}
             </span>
           </div>
           <div>
             <span className="font-semibold">Last Updated:</span>
-            <span className="ml-2">{new Date(health.timestamp).toLocaleString()}</span>
+            <span className="ml-2">
+              {new Date(health.timestamp).toLocaleString()}
+            </span>
           </div>
         </div>
       ) : (
         <div>Loading health status...</div>
       )}
     </div>
-  );}
+  );
+}

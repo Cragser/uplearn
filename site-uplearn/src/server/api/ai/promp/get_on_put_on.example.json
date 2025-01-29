@@ -1,93 +1,73 @@
 {
-  "words":[
+  "words": [
     {
-        "word":"get on",
-        "glossary":{
-          "primary_meaning":"To board or climb onto something, or to progress or manage a situation successfully."
+      "word": "get on",
+      "glossary": {
+        "primary_meaning": "To board or climb onto something, or to progress or manage a situation successfully."
+      },
+      "table": [
+        {
+          "meaning": "To board or climb onto a vehicle or surface.",
+          "context": "She managed to get on the train just in time before the doors closed.",
+          "related": ["board", "climb", "mount", "enter"]
         },
-        "table":[
-          {
-            "meaning":"To board or climb onto a vehicle or surface.",
-            "context":"She managed to get on the train just in time before the doors closed.",
-            "related":[
-              "board",
-              "climb",
-              "mount",
-              "enter"
-            ]
-          },
-          {
-            "meaning":"To manage or progress successfully in a situation.",
-            "context":"He’s getting on well with his new project at work.",
-            "related":[
-              "succeed",
-              "progress",
-              "advance",
-              "cope"
-            ]
-          }
-        ],
-        "exercise":[
-          {
-            "multiple_choice":[
-              {
-                "question":"What does 'get on' mean in this sentence: 'I need to get on the bus before it leaves.'?",
-                "options":[
-                  "To board",
-                  "To delay",
-                  "To stop",
-                  "To drive"
-                ],
-                "answer":"To board"
-              },
-              {
-                "question":"Choose the correct meaning of 'get on': 'She’s getting on well with her studies.'",
-                "options":[
-                  "To climb onto something",
-                  "To succeed or progress",
-                  "To fall behind",
-                  "To argue with someone"
-                ],
-                "answer":"To succeed or progress"
-              }
-            ],
-            "word_choice":[
-              {
-                "sentence":"She managed to ___ / ___ the plane just before takeoff.",
-                "options":[
-                  "get / on",
-                  "take / off",
-                  "jump / in",
-                  "stay / away"
-                ],
-                "answer":"get / on"
-              },
-              {
-                "sentence":"He’s trying to ___ / ___ with his new responsibilities.",
-                "options":[
-                  "get / on",
-                  "give / up",
-                  "look / after",
-                  "take / over"
-                ],
-                "answer":"get / on"
-              }
-            ]
-          }
-        ],
-        "content":{
-          "short_story":"Lisa was running late for work. She rushed to the station and managed to get on the train at the last second. At her office, she was determined to get on with her new tasks, eager to impress her boss. Despite a hectic start, she felt she was getting on well with her colleagues. By the end of the day, Lisa felt a sense of accomplishment as she headed home.",
-          "movie_examples":[
-            "\"Hurry up, get on the bus before it leaves!\" - Speed (1994)",
-            "\"I’ll get on with the mission, no matter the risks.\" - Mission: Impossible (1996)",
-            "\"We’ve got to get on that plane right now!\" - Casablanca (1942)"
+        {
+          "meaning": "To manage or progress successfully in a situation.",
+          "context": "He’s getting on well with his new project at work.",
+          "related": ["succeed", "progress", "advance", "cope"]
+        }
+      ],
+      "exercise": [
+        {
+          "multiple_choice": [
+            {
+              "question": "What does 'get on' mean in this sentence: 'I need to get on the bus before it leaves.'?",
+              "options": ["To board", "To delay", "To stop", "To drive"],
+              "answer": "To board"
+            },
+            {
+              "question": "Choose the correct meaning of 'get on': 'She’s getting on well with her studies.'",
+              "options": [
+                "To climb onto something",
+                "To succeed or progress",
+                "To fall behind",
+                "To argue with someone"
+              ],
+              "answer": "To succeed or progress"
+            }
           ],
-          "song_examples":[
-            "\"Get on your feet, get up and make it happen.\" - Song by Gloria Estefan",
-            "\"Get on the bus, don’t be late.\" - Song by Destiny’s Child",
-            "\"Get on the dance floor and show me what you got.\" - Song by Snap!"
+          "word_choice": [
+            {
+              "sentence": "She managed to ___ / ___ the plane just before takeoff.",
+              "options": ["get / on", "take / off", "jump / in", "stay / away"],
+              "answer": "get / on"
+            },
+            {
+              "sentence": "He’s trying to ___ / ___ with his new responsibilities.",
+              "options": [
+                "get / on",
+                "give / up",
+                "look / after",
+                "take / over"
+              ],
+              "answer": "get / on"
+            }
           ]
         }
+      ],
+      "content": {
+        "short_story": "Lisa was running late for work. She rushed to the station and managed to get on the train at the last second. At her office, she was determined to get on with her new tasks, eager to impress her boss. Despite a hectic start, she felt she was getting on well with her colleagues. By the end of the day, Lisa felt a sense of accomplishment as she headed home.",
+        "movie_examples": [
+          "\"Hurry up, get on the bus before it leaves!\" - Speed (1994)",
+          "\"I’ll get on with the mission, no matter the risks.\" - Mission: Impossible (1996)",
+          "\"We’ve got to get on that plane right now!\" - Casablanca (1942)"
+        ],
+        "song_examples": [
+          "\"Get on your feet, get up and make it happen.\" - Song by Gloria Estefan",
+          "\"Get on the bus, don’t be late.\" - Song by Destiny’s Child",
+          "\"Get on the dance floor and show me what you got.\" - Song by Snap!"
+        ]
+      }
     },
     {
       "word": "put on",
@@ -98,32 +78,17 @@
         {
           "meaning": "To wear or apply clothing, accessories, or makeup.",
           "context": "She put on her coat before leaving the house.",
-          "related": [
-            "wear",
-            "don",
-            "dress",
-            "apply"
-          ]
+          "related": ["wear", "don", "dress", "apply"]
         },
         {
           "meaning": "To turn on or start an appliance or device.",
           "context": "He put on the TV to watch the news.",
-          "related": [
-            "activate",
-            "turn on",
-            "start",
-            "switch on"
-          ]
+          "related": ["activate", "turn on", "start", "switch on"]
         },
         {
           "meaning": "To assume a particular behavior, attitude, or role.",
           "context": "He put on a brave face despite being nervous.",
-          "related": [
-            "pretend",
-            "assume",
-            "fake",
-            "display"
-          ]
+          "related": ["pretend", "assume", "fake", "display"]
         }
       ],
       "exercise": [
@@ -153,22 +118,12 @@
           "word_choice": [
             {
               "sentence": "Before the meeting, he decided to ___ / ___ a tie.",
-              "options": [
-                "put / on",
-                "take / off",
-                "switch / on",
-                "try / out"
-              ],
+              "options": ["put / on", "take / off", "switch / on", "try / out"],
               "answer": "put / on"
             },
             {
               "sentence": "Can you ___ / ___ the radio? I’d like to hear the news.",
-              "options": [
-                "put / on",
-                "turn / off",
-                "look / at",
-                "take / on"
-              ],
+              "options": ["put / on", "turn / off", "look / at", "take / on"],
               "answer": "put / on"
             }
           ]
@@ -190,57 +145,57 @@
     }
   ],
   "exercise": [
-          {
-            "multiple_choice": [
-              {
-                "question": "What does the phrasal verb mean in this sentence: 'I need to ___ the bus before it leaves.'?",
-                "options": ["Get on", "Put on", "Get off", "Put off"],
-                "answer": "Get on"
-              },
-              {
-                "question": "What is the correct phrasal verb in this sentence: 'She decided to ___ a sweater because it was cold.'?",
-                "options": ["Put on", "Get on", "Put off", "Get off"],
-                "answer": "Put on"
-              }
-            ],
-            "word_choice": [
-              {
-                "sentence": "Before the show started, I had to ___ / ___ my coat and hurry to my seat.",
-                "options": ["get / on", "put / on", "take / on", "put / off"],
-                "answer": "put / on"
-              },
-              {
-                "sentence": "As soon as the doors opened, they rushed to ___ / ___ the train.",
-                "options": ["get / on", "put / on", "put / off", "get / off"],
-                "answer": "get / on"
-              }
-            ]
-          },
-          {
-            "multiple_choice": [
-              {
-                "question": "What does the phrasal verb mean in this sentence: 'I forgot to ___ my headphones before starting the call.'?",
-                "options": ["Put on", "Get on", "Turn on", "Take on"],
-                "answer": "Put on"
-              },
-              {
-                "question": "What is the correct phrasal verb in this sentence: 'It was hard to ___ the horse because it was moving around.'?",
-                "options": ["Get on", "Put on", "Get in", "Put in"],
-                "answer": "Get on"
-              }
-            ],
-            "word_choice": [
-              {
-                "sentence": "He was nervous, so he decided to ___ / ___ a brave face for the presentation.",
-                "options": ["put / on", "get / on", "take / on", "put / off"],
-                "answer": "put / on"
-              },
-              {
-                "sentence": "After waiting for 10 minutes, we were finally able to ___ / ___ the bus.",
-                "options": ["get / on", "put / on", "put / in", "get / off"],
-                "answer": "get / on"
-              }
-            ]
-          }
+    {
+      "multiple_choice": [
+        {
+          "question": "What does the phrasal verb mean in this sentence: 'I need to ___ the bus before it leaves.'?",
+          "options": ["Get on", "Put on", "Get off", "Put off"],
+          "answer": "Get on"
+        },
+        {
+          "question": "What is the correct phrasal verb in this sentence: 'She decided to ___ a sweater because it was cold.'?",
+          "options": ["Put on", "Get on", "Put off", "Get off"],
+          "answer": "Put on"
+        }
+      ],
+      "word_choice": [
+        {
+          "sentence": "Before the show started, I had to ___ / ___ my coat and hurry to my seat.",
+          "options": ["get / on", "put / on", "take / on", "put / off"],
+          "answer": "put / on"
+        },
+        {
+          "sentence": "As soon as the doors opened, they rushed to ___ / ___ the train.",
+          "options": ["get / on", "put / on", "put / off", "get / off"],
+          "answer": "get / on"
+        }
+      ]
+    },
+    {
+      "multiple_choice": [
+        {
+          "question": "What does the phrasal verb mean in this sentence: 'I forgot to ___ my headphones before starting the call.'?",
+          "options": ["Put on", "Get on", "Turn on", "Take on"],
+          "answer": "Put on"
+        },
+        {
+          "question": "What is the correct phrasal verb in this sentence: 'It was hard to ___ the horse because it was moving around.'?",
+          "options": ["Get on", "Put on", "Get in", "Put in"],
+          "answer": "Get on"
+        }
+      ],
+      "word_choice": [
+        {
+          "sentence": "He was nervous, so he decided to ___ / ___ a brave face for the presentation.",
+          "options": ["put / on", "get / on", "take / on", "put / off"],
+          "answer": "put / on"
+        },
+        {
+          "sentence": "After waiting for 10 minutes, we were finally able to ___ / ___ the bus.",
+          "options": ["get / on", "put / on", "put / in", "get / off"],
+          "answer": "get / on"
+        }
+      ]
+    }
   ]
 }

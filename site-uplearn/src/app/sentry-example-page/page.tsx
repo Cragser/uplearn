@@ -13,11 +13,11 @@ export default function Page() {
 
       <main
         style={{
-          minHeight: "100vh",
+          alignItems: "center",
           display: "flex",
           flexDirection: "column",
           justifyContent: "center",
-          alignItems: "center",
+          minHeight: "100vh",
         }}
       >
         <h1 style={{ fontSize: "4rem", margin: "14px 0" }}>
@@ -39,25 +39,28 @@ export default function Page() {
         <button
           type="button"
           style={{
-            padding: "12px",
-            cursor: "pointer",
             backgroundColor: "#AD6CAA",
-            borderRadius: "4px",
             border: "none",
+            borderRadius: "4px",
             color: "white",
+            cursor: "pointer",
             fontSize: "14px",
             margin: "18px",
+            padding: "12px",
           }}
           onClick={async () => {
-            await Sentry.startSpan({
-              name: 'Example Frontend Span',
-              op: 'test'
-            }, async () => {
-              const res = await fetch("/api/sentry-example-api");
-              if (!res.ok) {
-                throw new Error("Sentry Example Frontend Error");
-              }
-            });
+            await Sentry.startSpan(
+              {
+                name: "Example Frontend Span",
+                op: "test",
+              },
+              async () => {
+                const res = await fetch("/api/sentry-example-api");
+                if (!res.ok) {
+                  throw new Error("Sentry Example Frontend Error");
+                }
+              },
+            );
           }}
         >
           Throw error!
@@ -65,7 +68,10 @@ export default function Page() {
 
         <p>
           Next, look for the error on the{" "}
-          <a href="https://sergio-reyes.sentry.io/issues/?project=4508724281737216">Issues Page</a>.
+          <a href="https://sergio-reyes.sentry.io/issues/?project=4508724281737216">
+            Issues Page
+          </a>
+          .
         </p>
         <p style={{ marginTop: "24px" }}>
           For more information, see{" "}

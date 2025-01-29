@@ -3,13 +3,13 @@
 import OpenAI from "openai";
 
 const openai = new OpenAI({
-        baseURL: 'https://api.deepseek.com',
-        apiKey: '<DeepSeek API Key>'
+  apiKey: "<DeepSeek API Key>",
+  baseURL: "https://api.deepseek.com",
 });
 
-async function main() {
+export async function aiChatService() {
   const completion = await openai.chat.completions.create({
-    messages: [{ role: "system", content: "You are a helpful assistant." }],
+    messages: [{ content: "You are a helpful assistant.", role: "system" }],
     model: "deepseek-chat",
   });
 
