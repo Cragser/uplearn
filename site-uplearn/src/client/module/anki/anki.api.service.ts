@@ -22,11 +22,12 @@ export async function fetchAnkiApi<T>(
   }
 
   const res = await fetch(url, {
-    method: options.method || "GET",
     headers: {
+      // eslint-disable-next-line @typescript-eslint/naming-convention
       "Content-Type": "application/json",
       ...options.headers,
     },
+    method: options.method || "GET",
   });
 
   if (!res.ok) {

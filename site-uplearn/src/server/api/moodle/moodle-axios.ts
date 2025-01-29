@@ -1,10 +1,6 @@
 // eslint-disable-next-line filenames-simple/pluralize
 import axios, { AxiosInstance } from "axios";
-import {
-  getMoodleConnectUrl,
-  getMoodleNextConnection,
-  getMoodleToken,
-} from "./moodle-connection";
+import { getMoodleConnectUrl, getMoodleToken } from "./moodle-connection";
 
 interface MoodleParams {
   wsfunction: string;

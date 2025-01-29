@@ -1,8 +1,5 @@
 "use client";
-import {
-  getMoodleConnectUrl,
-  getMoodleNextConnection,
-} from "@/src/server/api/moodle/moodle-connection";
+import { getMoodleNextConnection } from "@/src/server/api/moodle/moodle-connection";
 import { MoodleAction } from "@/src/shared/@types/moodle.api.types";
 
 interface FetchOptions {
@@ -25,11 +22,12 @@ export async function fetchMoodleApi<T>(
   }
 
   const res = await fetch(url, {
-    method: options.method || "GET",
     headers: {
+      // eslint-disable-next-line @typescript-eslint/naming-convention
       "Content-Type": "application/json",
       ...options.headers,
     },
+    method: options.method || "GET",
   });
 
   if (!res.ok) {

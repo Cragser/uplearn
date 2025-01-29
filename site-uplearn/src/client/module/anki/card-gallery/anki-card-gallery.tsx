@@ -8,7 +8,7 @@ import { AnkiCard } from "@/src/shared/@types/anki.types";
 
 export default function AnkiCardGallery() {
   const { deckName } = useAnkiStore((state) => state);
-  const { data, isError, error } = useQuery(createCardsOptions(deckName));
+  const { data, error, isError } = useQuery(createCardsOptions(deckName));
   const cards = Array.isArray(data) ? data : [];
 
   if (isError) {

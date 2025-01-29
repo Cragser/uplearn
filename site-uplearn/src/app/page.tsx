@@ -1,7 +1,6 @@
 import { DeckSelector } from "@/src/client/module/anki/deck-selector/deck-selector";
 import AnkiCardGallery from "@/src/client/module/anki/card-gallery/anki-card-gallery";
 
-
 export default async function HomePage() {
   return (
     <div className="container mx-auto py-8">

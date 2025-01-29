@@ -10,6 +10,12 @@
     "src/app/global-error.tsx",
     "src/app/sentry-example-page/page.tsx",
     "src/pages/_error.jsx",
+    "next-env.d.ts",
+    "sentry.client.config.ts",
+    "sentry.edge.config.ts",
+    "sentry.server.config.ts",
+    "next.config.js",
+    "tailwind.config.ts",
     // remove all json files
     "**/*.json"
   ],

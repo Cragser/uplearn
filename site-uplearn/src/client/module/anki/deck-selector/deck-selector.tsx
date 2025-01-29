@@ -10,7 +10,6 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { AnkiDeck } from "@/src/shared/@types/anki.types";
 import { useAnkiStore } from "@/src/client/store/anki/anki.store";
 import { useQuery } from "@tanstack/react-query";
 import { deckOptions } from "@/src/client/module/anki/deck-selector/deck.options";
@@ -18,7 +17,7 @@ import { deckOptions } from "@/src/client/module/anki/deck-selector/deck.options
 export function DeckSelector() {
   const [selectedDeck, setSelectedDeck] = React.useState<string>("");
   const setDeckName = useAnkiStore((state) => state.setDeckName);
-  const { data, isError, error } = useQuery(deckOptions);
+  const { data, error, isError } = useQuery(deckOptions);
   const decks = Array.isArray(data) ? data : [];
 
   if (isError) {

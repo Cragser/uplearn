@@ -7,7 +7,7 @@ import { fetchAnkiApi } from "@/src/client/module/anki/anki.api.service";
 // https://tanstack.com/query/latest/docs/framework/react/examples/nextjs-app-prefetching
 export const createCardsOptions = (deck: string) => {
   return queryOptions({
-    queryKey: ["cards", deck],
     queryFn: () => fetchAnkiApi("get-card", { params: { deck } }),
+    queryKey: ["cards", deck],
   });
 };
