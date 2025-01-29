@@ -12,35 +12,28 @@ import {
 } from "@/components/ui/card"
 import { Switch } from "@/components/ui/switch"
 import {AnkiCard} from "@/src/shared/@types/anki.types";
-
-
-const notifications = [
-	{
-		title: "Your call has been confirmed.",
-		description: "1 hour ago",
-	},
-	{
-		title: "You have a new message!",
-		description: "1 hour ago",
-	},
-	{
-		title: "Your subscription is expiring soon!",
-		description: "2 hours ago",
-	},
-]
-
+import {useMemo} from "react";
 
 
 export function CardDemo({
 							 answer,
 							 question,
-							 lastReviewed
+							 lastReviewed,
+	nextReview,
+	repeat,
+	tried,
+	failed,
+	errorRate,
+	remainingWork,
 						 }: Readonly<AnkiCard>) {
+
 	return (
 		<Card className={cn("w-[380px]")}>
 			<CardHeader>
 				<CardTitle>{question}</CardTitle>
-				<CardDescription>Last revision {lastReviewed}.</CardDescription>
+				<CardDescription>
+					{answer}
+					</CardDescription>
 			</CardHeader>
 			<div>
 				<div
@@ -49,14 +42,25 @@ export function CardDemo({
 					<span className="flex h-2 w-2 translate-y-1 rounded-full bg-sky-500"/>
 					<div className="space-y-1">
 						<p className="text-sm font-medium leading-none">
-							{"Solution"}
+							{`Error rate: ${errorRate}%`}
+
 						</p>
-						<p className="text-sm text-muted-foreground">
-							{answer}
-						</p>
+						<div>
+							<p className="text-sm text-muted-foreground">
+								Last revision {lastReviewed}
+
+
+							</p>
+						</div>
+						<div>
+							<p className="text-sm text-muted-foreground">
+								{`Remaining work: ${remainingWork}`}
+							</p>
+						</div>
 					</div>
 				</div>
 			</div>
+
 			<CardContent className="grid gap-4 mt-4">
 				<div className=" flex items-center space-x-4 rounded-md border p-4">
 					<BellRing/>
@@ -68,15 +72,16 @@ export function CardDemo({
 							It will create a task in your course
 						</p>
 					</div>
-					<Switch/>
+					<Switch checked={errorRate > 0} />
 				</div>
-
 			</CardContent>
-			{/*<CardFooter>*/}
-			{/*	<Button className="w-full">*/}
-			{/*		<Check /> Mark all as read*/}
-			{/*	</Button>*/}
-			{/*</CardFooter>*/}
+			<CardFooter>
+				{/*Stats here*/}
+
+				{/*<Button className="w-full">*/}
+				{/*	<Check /> Mark all as read*/}
+				{/*</Button>*/}
+			</CardFooter>
 		</Card>
 	)
 }

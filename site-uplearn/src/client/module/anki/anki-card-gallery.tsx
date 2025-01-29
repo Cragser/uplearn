@@ -25,7 +25,10 @@ export default function AnkiCardGallery() {
 				</div>
 			) : (
 				<section className="grid grid-cols-3 gap-4">
-					{cards.slice(0, 12).map((card: AnkiCard) => (
+					{cards
+						.sort((a, b) => (b.errorRate || 0) - (a.errorRate || 0))
+						.slice(0, 12)
+						.map((card: AnkiCard) => (
 						<CardDemo key={card.answer} {...card} />
 					))}
 				</section>

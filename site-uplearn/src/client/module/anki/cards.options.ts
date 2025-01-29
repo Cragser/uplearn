@@ -2,6 +2,7 @@
 import {queryOptions} from "@tanstack/react-query";
 import {getAnkiNextConnection} from "@/src/server/api/anki/anki-connection";
 
+// TODO: Add prefetching https://tanstack.com/query/latest/docs/framework/react/examples/nextjs-app-prefetching
 export const createCardsOptions = (deck: string) => {
 	return queryOptions({
 		queryKey: ['cards', deck],
