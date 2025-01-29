@@ -1,3 +1,5 @@
+import { MoodleAction } from "@/src/shared/@types/moodle.api.types";
+
 const MOODLE_API_URL =
   process.env.MOODLE_API_URL ||
   "http://localhost:80/webservice/rest/server.php";
@@ -11,8 +13,8 @@ export const getMoodleConnectUrl = () => {
   return MOODLE_API_URL;
 };
 
-export const getMoodleNextConnection = () => {
-  return MOODLE_API_URL;
+export const getMoodleNextConnection = (action: MoodleAction) => {
+  return `http://localhost:3000/api/moodle/${action}`;
 };
 
 export const getMoodleToken = () => {

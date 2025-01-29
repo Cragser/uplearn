@@ -1,7 +1,6 @@
 import { DeckSelector } from "@/src/client/module/anki/deck-selector/deck-selector";
 import AnkiCardGallery from "@/src/client/module/anki/card-gallery/anki-card-gallery";
 
-export const dynamic = "force-dynamic";
 
 export default async function HomePage() {
   return (

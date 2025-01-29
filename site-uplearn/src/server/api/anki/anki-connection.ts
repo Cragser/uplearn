@@ -1,3 +1,5 @@
+import { AnkiAction } from "@/src/shared/@types/anki.api.types";
+
 const ANKI_API_URL = process.env.ANKI_API_URL || "http://localhost:8765";
 const IS_DOCKER = process.env.DOCKER_ENVIRONMENT === "true";
 export const getAnkiConnectUrl = () => {
@@ -8,7 +10,6 @@ export const getAnkiConnectUrl = () => {
   return ANKI_API_URL;
 };
 
-type AnkiAction = "get-deck" | "get-card";
 // eslint-disable-next-line max-len
 // http://localhost:3000/api/anki/cards?deck=200%20Phrasal%20Verbs%20%20English%20-%20Spanish
 

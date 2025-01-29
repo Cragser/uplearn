@@ -1,6 +1,10 @@
 // eslint-disable-next-line filenames-simple/pluralize
 import axios, { AxiosInstance } from "axios";
-import { getMoodleNextConnection, getMoodleToken } from "./moodle-connection";
+import {
+  getMoodleConnectUrl,
+  getMoodleNextConnection,
+  getMoodleToken,
+} from "./moodle-connection";
 
 interface MoodleParams {
   wsfunction: string;
@@ -10,7 +14,7 @@ interface MoodleParams {
 
 export function createMoodleAxios(): AxiosInstance {
   const instance = axios.create({
-    baseURL: getMoodleNextConnection(),
+    baseURL: getMoodleConnectUrl(),
     headers: {
       // eslint-disable-next-line @typescript-eslint/naming-convention
       "Content-Type": "application/json",
