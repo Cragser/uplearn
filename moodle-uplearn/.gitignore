@@ -52,7 +52,7 @@ yarn-debug.log
 yarn-error.log
 
 # Data directories
-#/moodle_data/
+# /moodle_data/
 /postgresql_data/
 /logs/
 
