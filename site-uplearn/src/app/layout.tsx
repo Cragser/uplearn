@@ -20,7 +20,7 @@ export default function RootLayout({
   return (
     <html lang={"en"}>
       <body>
-        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
+        <ThemeProvider attribute="class" enableSystem>
           <Suspense>
             <Providers>{children}</Providers>
           </Suspense>

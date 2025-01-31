@@ -1,5 +1,4 @@
 export type MoodleAction =
-  | "get-courses"
-  | "get-sections"
-  | "get-course"
-  | "get-section";
+  | "courses/get-course"
+  | "sections/create-section"
+  | "courses/get-section";

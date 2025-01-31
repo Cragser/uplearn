@@ -24,7 +24,7 @@ export default async function handler(
     const response = await getCourses();
 
     // @ts-expect-error This is a temporal response
-    return res.status(200).json({ ...response });
+    return res.status(200).json(response);
   } catch (error) {
     console.error("Error fetching courses:", error);
     return res.status(500).json({ error: "Failed to fetch courses" });

@@ -1,6 +1,6 @@
 import { AxiosError } from "axios";
-import { moodleGet } from "../moodle-axios";
 import { MoodleApiError } from "@/src/server/error/moodle-api-error";
+import { moodleGet } from "@/src/server/adapter/axios/moodle/moodle-get";
 
 interface MoodleCourse {
   id: number;
@@ -42,9 +42,11 @@ export async function getCourses(): Promise<Course[]> {
   try {
     const response = await moodleGet<MoodleCourse[]>("core_course_get_courses");
 
-    return response.data
+    const t = response
       .filter((course) => course.format === "topics")
       .map(transformCourse);
+    console.log(t);
+    return t;
   } catch (error) {
     if (error instanceof AxiosError) {
       throw new MoodleApiError(

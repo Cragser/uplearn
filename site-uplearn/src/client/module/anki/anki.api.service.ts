@@ -13,13 +13,22 @@ export async function fetchAnkiApi<T>(
   options: FetchOptions = {},
 ): Promise<T> {
   const url = new URL(ankiApiUrl(action));
-
+  let shouldHaveParams = false;
   // Add query parameters if provided
   if (options.params) {
     Object.entries(options.params).forEach(([key, value]) => {
+      if (!value) {
+        shouldHaveParams = true;
+      }
       url.searchParams.append(key, value);
     });
   }
+
+  if (shouldHaveParams) {
+    return [] as T;
+  }
+
+  // check if we don't have any url.searchParams return []
 
   const res = await fetch(url, {
     headers: {
