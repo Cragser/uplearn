@@ -295,3 +295,13 @@ ORDER BY slot.slot;
 ```
 
 Nota: La consulta anterior ilustra el manejo de versiones y la verificación de la existencia de preguntas asignadas o aleatorias en el quiz, mostrando cómo se unen los datos de diversas tablas para obtener una vista consolidada.
+
+
+Referencias: 
+
+Agradecimiento a estos sitios que ayudaron a la investigación
+
+https://docs.moodle.org/405/en/ad-hoc_contributed_reports#Quiz_Activity
+https://www.examulator.com/er/4.5/
+https://moodledev.io/docs/5.0/apis#activity-module-apis
+https://moodledev.io/docs/5.0/apis/core/activitycompletion

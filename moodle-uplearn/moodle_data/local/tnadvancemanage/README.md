@@ -14,7 +14,7 @@ Goal of this development was to create a plugin that exposes the most relevant e
 
 Our current implementation of the **Page API** offers an efficient and straightforward solution for creating pages in Moodle. Key features include:
 
-### Current Implementation (page_api.php)
+### Current Implementation 
 
 1. **Simplified Structure**
    - Unified interface for creating pages in specific sections.
