@@ -1,5 +1,4 @@
 import { BellRing, Check } from "lucide-react";
-
 import { cn } from "@/lib/utils";
 import {
   Card,
@@ -11,6 +10,7 @@ import {
 } from "@/components/ui/card";
 import { Switch } from "@/components/ui/switch";
 import { AnkiCard } from "@/src/shared/@types/anki.types";
+import { useAnkiStore } from "@/src/client/store/anki/anki.store";
 
 export function CardDemo({
   answer,
@@ -23,8 +23,25 @@ export function CardDemo({
   repeat,
   tried,
 }: Readonly<AnkiCard>) {
+  const {
+    cardSelected: cardSelected,
+    addCardToSelected,
+    removeCardFromSelected,
+  } = useAnkiStore();
+  const isSelected = cardSelected.some(
+    (questionSelected) => questionSelected === question,
+  );
+
+  const handleToggle = (isChecked: boolean) => {
+    if (isChecked) {
+      addCardToSelected(question);
+    } else {
+      removeCardFromSelected(question);
+    }
+  };
+
   return (
-    <Card className={cn("w-[380px]")}>
+    <Card className={cn("w-auto", isSelected ? "border-primary" : "")}>
       <CardHeader>
         <CardTitle>{question}</CardTitle>
         <CardDescription>{answer}</CardDescription>
@@ -61,7 +78,7 @@ export function CardDemo({
               It will create a task in your course
             </p>
           </div>
-          <Switch checked={errorRate > 0} />
+          <Switch checked={isSelected} onCheckedChange={handleToggle} />
         </div>
       </CardContent>
       <CardFooter>

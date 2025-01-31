@@ -6,6 +6,7 @@ interface FetchOptions {
   method?: string;
   headers?: Record<string, string>;
   params?: Record<string, string>;
+  body?: Record<string, string>;
 }
 
 export async function fetchMoodleApi<T>(
@@ -22,6 +23,7 @@ export async function fetchMoodleApi<T>(
   }
 
   const res = await fetch(url, {
+    body: options.body ? JSON.stringify(options.body) : undefined,
     headers: {
       // eslint-disable-next-line @typescript-eslint/naming-convention
       "Content-Type": "application/json",
@@ -39,5 +41,7 @@ export async function fetchMoodleApi<T>(
     throw new Error(`Expected JSON but received ${contentType}`);
   }
 
-  return res.json();
+  const data = await res.json();
+  console.log(data);
+  return data;
 }
