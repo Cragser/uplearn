@@ -317,7 +317,17 @@ class structure {
      */
     public function has_use_capability(int $slotnumber): bool {
         $slot = $this->slotsinorder[$slotnumber];
-        if (is_numeric($slot->questionid)) {
+        debugging(
+          "<pre>" . print_r(json_encode([
+                        "context" => "has_use_capability",
+                        "slotnumber" => $slotnumber,
+                        "slots" => $this->slotsinorder,
+                        "slot"  => $slot->contextid,
+                        "full_slot" => $slot
+                    ], JSON_PRETTY_PRINT) . "</pre>", true));
+
+
+      if (is_numeric($slot->questionid)) {
             // Non-random question.
             return question_has_capability_on($this->get_question_by_id($slot->questionid), 'use');
         } else {
@@ -735,9 +745,11 @@ class structure {
     protected function populate_structure() {
         global $DB;
 
+
+        
         $this->populate_grade_items();
         $slots = qbank_helper::get_question_structure($this->quizobj->get_quizid(), $this->quizobj->get_context());
-        $this->questions = [];
+        $this->questions = []; 
         $this->slotsinorder = [];
         foreach ($slots as $slotdata) {
             $this->questions[$slotdata->questionid] = $slotdata;
@@ -1026,7 +1038,7 @@ class structure {
         }
 
         return $slots;
-    }
+    } 
 
     /**
      * Refresh page numbering of quiz slots and save to the database.

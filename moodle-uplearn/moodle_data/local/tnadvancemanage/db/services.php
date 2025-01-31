@@ -32,5 +32,21 @@ $functions = [
         'type' => 'write',
         'ajax' => true,
         'capabilities' => 'moodle/course:manageactivities'
+    ],
+    'local_tnadvancemanage_create_database' => [
+        'classname' => 'local_tnadvancemanage\external\database_api',
+        'methodname' => 'create_database',
+        'description' => 'Creates a new database in a course section',
+        'type' => 'write',
+        'ajax' => true,
+        'capabilities' => 'moodle/course:manageactivities'
+    ],
+    'local_tnadvancemanage_create_quiz' => [
+        'classname' => 'local_tnadvancemanage\external\quiz_api',
+        'methodname' => 'create_quiz',
+        'description' => 'Creates a new quiz in a course section',
+        'type' => 'write',
+        'ajax' => true,
+        'capabilities' => 'moodle/course:manageactivities'
     ]
 ];

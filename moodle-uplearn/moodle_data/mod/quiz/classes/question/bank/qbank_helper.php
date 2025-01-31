@@ -171,6 +171,16 @@ class qbank_helper {
               ORDER BY slot.slot
               ", $params);
 
+   
+        
+        debugging("<pre style='padding-top: 10rem; padding-left: 20rem;'>" . 
+                  print_r(json_encode([
+                    'context' => 'get_question_structure',  
+                    'debug' =>  $params,
+                    "slots" => $slotdata
+          ], JSON_PRETTY_PRINT) . "</pre>", true));
+                          
+
         // Unpack the random info from question_set_reference.
         foreach ($slotdata as $slot) {
             // Ensure the right id is the id.
