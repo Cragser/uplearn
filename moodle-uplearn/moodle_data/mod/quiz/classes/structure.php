@@ -317,15 +317,6 @@ class structure {
      */
     public function has_use_capability(int $slotnumber): bool {
         $slot = $this->slotsinorder[$slotnumber];
-        debugging(
-          "<pre>" . print_r(json_encode([
-                        "context" => "has_use_capability",
-                        "slotnumber" => $slotnumber,
-                        "slots" => $this->slotsinorder,
-                        "slot"  => $slot->contextid,
-                        "full_slot" => $slot
-                    ], JSON_PRETTY_PRINT) . "</pre>", true));
-
 
       if (is_numeric($slot->questionid)) {
             // Non-random question.
