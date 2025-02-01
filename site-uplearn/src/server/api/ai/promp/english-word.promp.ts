@@ -13,33 +13,134 @@ Objective:
 This new, enhanced instruction embraces a structured and detailed approach that leverages the dataset's educational format to foster a practical understanding of idiomatic expressions and phrasal verbs, suitable for users at different stages of learning.
 
 [INPUT RULES]
-terms: List of terms to be included in the JSON object.
-example: [word1, word2, word3]
+The input must follow these requirements:
+
+1. Format Requirements:
+   - Must be an array of strings containing English terms
+   - Each term should be a valid English word, phrase, or expression
+   - Terms should be comma-separated within square brackets
+   - Maximum of 10 terms per request
+   - Minimum of 1 term per request
+
+2. Term Requirements:
+   - Each term must be between 1 and 50 characters
+   - Only alphanumeric characters, spaces, and basic punctuation allowed
+   - No HTML tags or special formatting
+   - Must be commonly used in English language
+   - Phrasal verbs should be in their base form
+
+3. Example Valid Inputs:
+   ["break in", "back up", "call back"]
+   ["get along", "look forward to", "put off"]
+
+4. Example Invalid Inputs:
+   ["término en español"] - Non-English terms
+   [] - Empty array
+   "single term" - Not in array format
+   ["term1", "term2", ... "term15"] - Exceeds maximum terms
+
+[FORMAT]
+The response must be structured in two distinct blocks:
+
+1. <think> block:
+   - This block is where you can freely express your thoughts and reasoning
+   - Use this space to analyze the input terms and plan your response
+   - You can write in any style that helps organize your thoughts
+
+2. <json> block:
+   - This block must contain ONLY a valid JSON object
+   - The JSON structure will be validated against the zod schema defined below
+   - All content must follow the specified output format requirements
+   - No additional text or formatting is allowed in this block
+
+[VALIDATION]
+const jsonSchema = z.object({
+  database: z.object({
+    entries: z.array(
+      z.object({
+        context: z.string(),
+        meaning: z.string(),
+        related_words: z.string(),
+        word: z.string(),
+      }),
+    ),
+    intro: z.string(),
+    name: z.string(),
+  }),
+  glossary: z.object({
+    intro: z.string(),
+    name: z.string(),
+    terms: z.array(
+      z.object({
+        concept: z.string(),
+        definition: z.string(),
+      }),
+    ),
+  }),
+  page: z.object({
+    content: z.string(),
+    name: z.string(),
+  }),
+  quiz: z.object({
+    name: z.string(),
+    questions: z.array(
+      z.object({
+        answer: z.number(),
+        options: z.array(z.string()),
+        question: z.string(),
+      }),
+    ),
+  }),
+  section: z.object({
+    summary: z.string(),
+  }),
+});
 
 [OUTPUT]
-ONLY INCLUDE JSON OBJECTS IN THE OUTPUT
-section.summary: A brief description of the section, including its objectives, key concepts, and learning outcomes. Includes
-page.content: html content with an explanation of the input words. Includes by term: 1."Short Story": Craft a concise, engaging original story that uses all the provided terms effectively, spanning 5-8 sentences, to demonstrate practical usage. 2. "Movie Examples": Include three authentic movie quotes for each term that illustrate its usage (formatted as "*quote*" - Movie (Year)).  3. "Song Examples": Present three snippets from song lyrics for each term demonstrating its usage (formatted as "*lyric*" - Song by Artist). 4. Mnemotechnical helpers for mexican users.  
-page.name: name of the page. It will help to remember the input concepts
-glossary.intro: Introduction to the glossary.
-glossary.name: name of the glossary. It will help to remember the input concepts
-glossary.terms: list of terms with their definitions. Every meaning for every term included in the input. Remember only include english terms.
-glossary.term[X].definition: definition of the term.
-glossary.term[X].concept: term to be defined.
-database.intro: Introduction to the database. It uses the input terms to create a practical example.
-database.name: name of the database.  It will help to remember the input concepts
-database.entries: list of entries with their contexts. 
-database.entry[X].context: context of the entry.
-database.entry[X].meaning: meaning of the entry.
-database.entry[X].related_words: A list of related terms. Format string: "word1, word2, word3"
-database.entry[X].word: word to be defined.
-quiz.name: name of the quiz.
-quiz.questions: list of questions with their options.
-quiz.question[X].answer: answer to the question.
-quiz.question[X].options: list of options to the question
-quiz.question[X].question: question to the question.
+[OUTPUT FORMAT]
+The JSON object must include the following sections with their specified requirements:
+
+1. Section Component
+   - section.summary: A comprehensive overview that includes:
+     * Learning objectives for the terms
+     * Key concepts to be covered
+     * Expected learning outcomes
+     * Progression of difficulty levels
+
+2. Page Component
+   - page.name: A descriptive title that encapsulates the main themes of the included terms
+   - page.content: Rich HTML content including:
+     * Short Story: A 5-8 sentence narrative incorporating all terms naturally
+     * Movie Examples: Three contextual quotes per term ("*quote*" - Movie (Year))
+     * Song Examples: Three lyric examples per term ("*lyric*" - Song by Artist)
+     * Mnemonic Devices: Memory aids specifically designed for Spanish speakers
+
+3. Glossary Component
+   - glossary.name: A clear, thematic title for the term collection
+   - glossary.intro: A brief overview of the terms' relationships and importance
+   - glossary.terms: Array of term objects containing:
+     * concept: The term being defined (English only)
+     * definition: Clear, comprehensive explanation with usage notes
+
+4. Database Component
+   - database.name: Descriptive title reflecting the term collection's theme
+   - database.intro: Contextual introduction connecting the terms
+   - database.entries: Array of detailed term entries including:
+     * word: The term itself
+     * context: Usage examples and situations
+     * meaning: Detailed explanation of usage and connotations
+     * related_words: Comma-separated list of associated terms
+
+5. Quiz Component
+   - quiz.name: Engaging title for the assessment section
+   - quiz.questions: Array of question objects containing:
+     * question: Clear, context-rich question text
+     * options: Array of possible answers (4 options recommended)
+     * answer: Index of the correct option (0-based)
+
+Note: All content must be in English except where specifically noted for Spanish speakers (mnemonics).
 `;
 
 `INPUT: 
-[Devolver lallamada, Break In, Averiarse, "Back Up]
+["break in", "back up", "call back"]
 `;

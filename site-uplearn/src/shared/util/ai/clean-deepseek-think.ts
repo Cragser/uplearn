@@ -1,28 +1,34 @@
 /**
- * eslint-disable-next-line max-len
- * This function removes <think> blocks from the input and extracts a JSON object
- * from a ```json code block. If the JSON is valid, it returns the parsed object
+ * Extracts and returns the JSON object from the input string.
+ * This function removes all <think> blocks and then extracts the content
+ * inside the <json> block. If the JSON is valid, it returns the parsed object;
  * otherwise, it returns null.
  */
-
 export function cleanDeepSeekThink(input: string): unknown {
-  // Remove all <think>...</think> blocks
-  const withoutThink = input.replace(/<think>[\s\S]*?<\/think>/g, "");
-
-  // Regex to find a ```json code block and capture its content
-  const jsonBlockRegex = /```json\s*([\s\S]*?)\s*```/;
-  const match = jsonBlockRegex.exec(withoutThink);
-
-  if (match && match[1]) {
-    try {
-      // Parse and return the JSON content
-      return JSON.parse(match[1]);
-    } catch (error) {
-      console.error("Error parsing JSON:", error);
-      return null;
-    }
+  if (!input || typeof input !== 'string') {
+    return null;
   }
 
-  // Return null if no valid JSON code block is found
-  return null;
+  // Remove all <think>...</think> blocks
+  const withoutThink = input.replace(/<think>[\s\S]*?<\/think>/g, "").trim();
+
+  // Regex to find a <json> block and capture its content
+  const jsonBlockRegex = /<json>\s*([\s\S]*?)\s*<\/json>/;
+  const match = jsonBlockRegex.exec(withoutThink);
+
+  if (!match || !match[1]) {
+    return null;
+  }
+
+  try {
+    const jsonContent = match[1].trim();
+    if (!jsonContent) {
+      return null;
+    }
+    // Parse and return the JSON content
+    return JSON.parse(jsonContent);
+  } catch (error) {
+    console.error("Error parsing JSON:", error);
+    return null;
+  }
 }
