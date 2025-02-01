@@ -8,10 +8,10 @@ async function handler(
   req: NextApiRequest,
   res: NextApiResponse<{ id: number } | { error: string }>,
 ) {
-  const body = {};
-  console.log("Create section handler");
+  const body = req.body;
   const section = await createSectionService({
-    courseid: 4,
+    cards: body.cardSelected,
+    courseid: body.courseId,
     title: oneWeekName(),
   });
   return res.status(201).json({ id: section.id });
@@ -20,9 +20,8 @@ async function handler(
 const validationOptions = {
   methods: ["POST"],
   requiredFields: {
+    cardSelected: "Cards selected",
     courseId: "Course ID",
-    description: "Description",
-    name: "Name",
   },
 };
 

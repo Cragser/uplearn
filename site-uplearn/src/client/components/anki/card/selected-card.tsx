@@ -4,18 +4,22 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { PlusIcon } from "lucide-react";
 import { useMutation } from "@tanstack/react-query";
-import { createSection } from "@/src/server/api/moodle/section/create-section.service";
 import { createSectionMutation } from "@/src/client/module/moodle/course-selector/section.options";
+import { useMoodleStore } from "@/src/client/store/anki/moodle.store";
 
 export default function SelectedCard() {
   const { cardSelected } = useAnkiStore((state) => state);
+  const { courseIdSelected } = useMoodleStore((state) => state);
   const createSectionMutationLocal = useMutation({
-    mutationFn: () =>
-      createSectionMutation({
-        courseId: 1,
-        name: "test",
-        description: "description",
-      }),
+    mutationFn: () => {
+      if (!courseIdSelected) {
+        return new Promise((resolve) => resolve(null));
+      }
+      return createSectionMutation({
+        courseId: courseIdSelected,
+        cardSelected: cardSelected,
+      });
+    },
   });
   return (
     <section className="flex flex-col  w-full ">

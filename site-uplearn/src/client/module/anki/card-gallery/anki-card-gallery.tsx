@@ -5,9 +5,11 @@ import { useAnkiStore } from "@/src/client/store/anki/anki.store";
 import { useQuery } from "@tanstack/react-query";
 import { createCardsOptions } from "@/src/client/module/anki/card-gallery/card.options";
 import { AnkiCard } from "@/src/shared/@types/anki.types";
+import { useMoodleStore } from "@/src/client/store/anki/moodle.store";
 
 export default function AnkiCardGallery() {
   const { deckName } = useAnkiStore((state) => state);
+  const { courseSelected } = useMoodleStore((state) => state);
   const { data, error, isError } = useQuery(createCardsOptions(deckName));
   const cards = Array.isArray(data) ? data : [];
 
@@ -21,9 +23,12 @@ export default function AnkiCardGallery() {
 
   return (
     <section>
-      <div className="mb-4 flex flex-col gap-4 h-8">
+      <div className="mb-4 flex flex-row gap-4 h-8">
         <h2 className="mt-4 text-sm text-gray-600">
           Selected deck: {deckName || "No deck selected"}
+        </h2>
+        <h2 className="mt-4 text-sm text-gray-600">
+          Selected course: {courseSelected || "No course selected"}
         </h2>
       </div>
 

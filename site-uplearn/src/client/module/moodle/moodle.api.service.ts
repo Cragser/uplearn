@@ -23,7 +23,7 @@ export async function fetchMoodleApi<T>(
   }
 
   const res = await fetch(url, {
-    body: options.body ? JSON.stringify(options.body) : undefined,
+    body: options.params ? JSON.stringify(options.params) : undefined,
     headers: {
       // eslint-disable-next-line @typescript-eslint/naming-convention
       "Content-Type": "application/json",
@@ -42,6 +42,5 @@ export async function fetchMoodleApi<T>(
   }
 
   const data = await res.json();
-  console.log(data);
   return data;
 }

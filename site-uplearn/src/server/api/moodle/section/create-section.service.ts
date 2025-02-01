@@ -3,16 +3,32 @@ import withMoodleErrorHandler from "@/src/server/wrappers/moodle/with-moodle-err
 import { moodlePost } from "@/src/server/adapter/axios/moodle/moodle-post";
 import { moodleGet } from "@/src/server/adapter/axios/moodle/moodle-get";
 import { questionsMockData } from "@/src/server/mocks/quiz-data";
+import aiLearnContentService from "@/src/server/api/ai/learn-content/ai-learn-content.service";
+import { contentMock } from "@/src/server/mocks/ai/content.mock";
+import { aiChatService } from "@/src/server/api/ai/ai-chat.service";
+import { englishWordPrompt } from "@/src/server/api/ai/promp/english-word.promp";
+import getContentLearnService from "@/src/server/api/ai/open-ai/get-content-learn.service";
+import getContentLearnServiceOA from "@/src/server/api/ai/open-ai/get-content-learn.service";
 
 interface Params {
   courseid: number;
   title: string;
+  cards: string;
 }
 
 async function createSectionService({
+  cards,
   courseid,
   title,
 }: Params): Promise<unknown> {
+  console.log(cards);
+  //const aiResponse = contentMock;
+  const aiResponse = await aiChatService(cards, englishWordPrompt);
+  console.log({ aiResponse });
+  // return aiResponse;
+
+  // const aiResponse = await getContentLearnServiceOA(cards);
+
   const sectionResponse = await moodlePost<unknown>(
     "local_wsmanagesections_create_sections",
     {
@@ -22,10 +38,8 @@ async function createSectionService({
     },
   );
   const section = Array.isArray(sectionResponse) ? sectionResponse[0] : null;
-  console.log(section);
-  console.log("\n\n");
+
   //
-  // delay 100ms
   await new Promise((resolve) => setTimeout(resolve, 100));
 
   const sectionUpdateResponse = await moodleGet<unknown>(
@@ -36,7 +50,7 @@ async function createSectionService({
         {
           name: title,
           section: section.sectionid,
-          summary: `${title} - Created by API`,
+          summary: `${aiResponse.section.summary} - Created by API`,
           summaryformat: 1,
           type: "id",
           visible: 1,
@@ -47,12 +61,11 @@ async function createSectionService({
   await new Promise((resolve) => setTimeout(resolve, 100));
 
   const page = await moodleGet<unknown>("local_tnadvancemanage_create_page", {
-    content: "<p>This is a new page</p>",
+    content: aiResponse.page.content,
     courseid: courseid,
-    name: "New Page",
+    name: aiResponse.page.name,
     sectionid: section.sectionid,
   });
-  console.log(page);
 
   const terms = [
     {
@@ -70,63 +83,28 @@ async function createSectionService({
     "local_tnadvancemanage_create_glossary",
     {
       courseid: courseid,
-      intro: "This is an introduction to the glossary.",
-      name: "English Vocabulary",
+      intro: aiResponse.glossary.intro,
+      name: aiResponse.glossary.name,
       sectionid: section.sectionid,
-      terms: terms,
+      terms: aiResponse.glossary.terms,
     },
   );
-  /**
-   * A list of múltiple meanings for a single word.
-   * 'word' => new external_value(PARAM_TEXT, 'The vocabulary word'),
-   * 'meaning' => new external_value(PARAM_RAW, 'The meaning of the word'),
-   * 'context' => new external_value(PARAM_RAW, 'The context where the word is used'),
-   * 'related_words' => new external_value(PARAM_TEXT, 'Related words')
-   */
-  const databaseRows = [
-    {
-      context: "In a sentence, to do something.",
-      meaning: "To perform, execute, or accomplish a task, plan, or order.",
-      related_words: "Carry on, carry out, carry over, carry through",
-      word: "Carry out",
-    },
-    {
-      context: "In a sentence, to do something.",
-      meaning: "To fulfill orders or instructions",
-      related_words: "Carry on, carry out, carry over",
-      word: "Carry out",
-    },
-    {
-      context: "In a sentence, to do something.",
-      meaning:
-        "To stop doing or using something; to remove something completely.",
-      related_words: "Cut off, cut out, cut over",
-      word: "cut out",
-    },
-    {
-      context: "In a sentence, to do something.",
-      meaning:
-        "To stop the supply of something; to disconnect or remove completely.",
-      related_words: "Cut off, cut out, cut over, cut through,",
-      word: "cut out",
-    },
-  ];
 
   const database = await moodleGet<unknown>(
     "local_tnadvancemanage_create_database",
     {
       courseid: courseid,
-      entries: databaseRows,
-      intro: "This is an introduction to the database.",
-      name: "English Vocabulary",
+      entries: aiResponse.database.entries,
+      intro: aiResponse.database.intro,
+      name: aiResponse.database.name,
       sectionid: section.sectionid,
     },
   );
 
   const quiz = await moodleGet<unknown>("local_tnadvancemanage_create_quiz", {
     courseid: courseid,
-    name: "example quiz",
-    questions: questionsMockData,
+    name: aiResponse.quiz.name,
+    questions: aiResponse.quiz.questions,
     sectionid: section.sectionid,
   });
 
