@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/naming-convention */
+/* eslint-disable @typescript-eslint/naming-convention, max-len  */
 import { z } from "zod";
 
 const jsonSchema = z.object({

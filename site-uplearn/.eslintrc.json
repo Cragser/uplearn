@@ -48,6 +48,12 @@
     {
       "files": ["*.js", "*.jsx"],
       "rules": {}
+    },
+    {
+      "files": ["**/mocks/**/*"],
+      "rules": {
+        "max-len": "off"
+      }
     }
   ],
   "rules": {

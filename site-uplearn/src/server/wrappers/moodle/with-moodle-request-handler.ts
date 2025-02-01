@@ -2,6 +2,7 @@ import { AxiosError, AxiosResponse } from "axios";
 import { MoodleApiError } from "@/src/server/error/moodle-api-error";
 import { get, has } from "lodash";
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 type MoodleRequestFunction<T> = () => Promise<AxiosResponse>;
 
 /**

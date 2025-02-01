@@ -15,14 +15,8 @@ export async function moodleGet<T>(
 ): Promise<T> {
   const instance = createMoodleAxios();
 
-  const fullParams = {
-    moodlewsrestformat: "json",
-    wsfunction,
-    wstoken: getMoodleToken(),
-    ...params,
-  };
-
   // add all params to the url
+  // eslint-disable-next-line max-len
   // example:  http://localhost/lib/ajax/service.php?sesskey=Vzg3mMaGlB&info=core_courseformat_update_course
 
   return withMoodleRequestHandler(() =>

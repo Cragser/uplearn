@@ -8,8 +8,7 @@ export const createPage = async () => {
   try {
     const response = await axios.post(getMoodleConnectUrl(), null, {
       params: {
-        content:
-          "<p>Bienvenidos al curso, aquí encontrarás información importante.</p>",
+        content: "<p>Bienvenidos al curso.</p>",
         contentformat: 1,
         course: 4, // ID del curso donde se creará la página
         intro: "Esta es la introducción de la página.",

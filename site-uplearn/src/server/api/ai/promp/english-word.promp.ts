@@ -141,6 +141,6 @@ The JSON object must include the following sections with their specified require
 Note: All content must be in English except where specifically noted for Spanish speakers (mnemonics).
 `;
 
-`INPUT: 
+export const input = `INPUT: 
 ["break in", "back up", "call back"]
 `;

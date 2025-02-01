@@ -40,6 +40,6 @@ quiz.question[X].options: list of options to the question
 quiz.question[X].question: question to the question.
 `;
 
-`INPUT: 
+export const input = `INPUT: 
 [Devolver lallamada, Break In, Averiarse, "Back Up]
 `;

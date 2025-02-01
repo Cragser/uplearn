@@ -1,4 +1,4 @@
-import { BellRing, Check } from "lucide-react";
+import { BellRing, Check, Sparkles } from "lucide-react";
 import { cn } from "@/lib/utils";
 import {
   Card,
@@ -69,13 +69,11 @@ export function CardDemo({
 
       <CardContent className="grid gap-4 mt-4">
         <div className=" flex items-center space-x-4 rounded-md border p-4">
-          <BellRing />
+          <Sparkles />
           <div className="flex-1 space-y-1">
-            <p className="text-sm font-medium leading-none">
-              Get task from this card.
-            </p>
+            <p className="text-sm font-medium leading-none">Learn with AI</p>
             <p className="text-sm text-muted-foreground">
-              It will create a task in your course
+              It will create a section in your course
             </p>
           </div>
           <Switch checked={isSelected} onCheckedChange={handleToggle} />

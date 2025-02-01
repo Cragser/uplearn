@@ -39,6 +39,6 @@ export async function moodlePost<T>(
   });
 
   return withMoodleRequestHandler(() =>
-    instance.post("", urlEncodedParams.toString())
+    instance.post("", urlEncodedParams.toString()),
   );
 }

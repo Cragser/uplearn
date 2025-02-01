@@ -1,11 +1,14 @@
+import { DeepSeekResponse } from "../../../server/types/ai/deep-seek.response";
+
 /**
  * Extracts and returns the JSON object from the input string.
  * This function removes all <think> blocks and then extracts the content
- * inside the <json> block. If the JSON is valid, it returns the parsed object;
- * otherwise, it returns null.
+ * inside the <json> block. If the JSON is valid and matches the expected
+ * schema,it returns the parsed and validated object; otherwise
+ * it returns null.
  */
-export function cleanDeepSeekThink(input: string): unknown {
-  if (!input || typeof input !== 'string') {
+export function cleanDeepSeekThink(input: string): DeepSeekResponse | null {
+  if (!input || typeof input !== "string") {
     return null;
   }
 

@@ -3,6 +3,7 @@ import { AzureKeyCredential } from "@azure/core-auth";
 import { cleanDeepSeekThink } from "@/src/shared/util/ai/clean-deepseek-think";
 import * as fs from "node:fs";
 import * as path from "node:path";
+import { get } from "lodash";
 
 export async function aiChatService(
   userMessage: string,
@@ -46,27 +47,39 @@ export async function aiChatService(
     if (!fs.existsSync(filesDir)) {
       fs.mkdirSync(filesDir, { recursive: true });
     }
-    
+
     const userMessagePreview = userMessage
       .slice(0, 30)
       .replace(/[^a-zA-Z0-9]/g, "-")
       .toLowerCase();
-    
+
     fs.writeFileSync(
       path.join(
         filesDir,
-        `response-${userMessagePreview}-${new Date().toISOString()}.json`
+        `response-${userMessagePreview}-${new Date().toISOString()}.json`,
       ),
-      JSON.stringify(response.body, null, 2)
+      JSON.stringify(response.body, null, 2),
     );
 
     if (response.status !== "200") {
       throw response.body.error;
     }
 
-    return cleanDeepSeekThink(response.body.choices[0].message.content);
+    if (!response.body?.choices?.[0]?.message?.content) {
+      throw new Error("Invalid response format: missing message content");
+    }
+
+    const cleanedResponse = cleanDeepSeekThink(
+      response.body.choices[0].message.content,
+    );
+
+    if (cleanedResponse === null) {
+      throw new Error("Failed to clean response");
+    }
+
+    return cleanedResponse;
   } catch (error) {
     console.error("Error in aiChatService:", error);
-    throw new Error(`Failed to process chat request: ${error.message}`);
+    throw new Error(`Failed to process chat request: ${get(error, "message")}`);
   }
 }

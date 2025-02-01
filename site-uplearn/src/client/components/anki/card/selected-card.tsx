@@ -26,7 +26,7 @@ export default function SelectedCard() {
       <div className="mb-4 flex row  ">
         <Button
           disabled={cardSelected.length === 0}
-          onClick={() => createSectionMutationLocal.mutate({}, null)}
+          onClick={() => createSectionMutationLocal.mutate()}
         >
           <PlusIcon />
           {cardSelected.length === 0
