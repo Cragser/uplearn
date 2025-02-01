@@ -210,7 +210,7 @@ trait quiz_api {
     // Get the newly created quiz
     $quiz = $DB->get_record('quiz', ['id' => $cmid->instance], '*', MUST_EXIST);
 
-    $quiz->courseModuleId = $courseModuleId; 
+    $quiz->courseModuleId = $quizContext->id; 
     return $quiz;
   }
   
@@ -311,7 +311,7 @@ trait quiz_api {
     $reference = new stdClass();
     // Temporal fix. We should use context->id. But we are using
     // context->instance
-    $reference->usingcontextid = $contextId - 2;
+    $reference->usingcontextid = $contextId;
     $reference->component = 'mod_quiz';
     $reference->questionarea = 'slot';
     $reference->itemid = $quizSlotId;
@@ -424,7 +424,7 @@ trait quiz_api {
       $category->infoformat = FORMAT_HTML;
       $category->stamp = make_unique_id_code();
       $category->parent = 0;
-      $category->sortorder = 999;
+      $category->sortorder = 999; 
       $category->id = $DB->insert_record('question_categories', $category);
     }
     return $category;
