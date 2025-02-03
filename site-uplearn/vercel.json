@@ -1,0 +1,10 @@
+{
+  "functions": {
+    "app/api/**/*": {
+      "maxDuration": 5
+    },
+    "app/api/moodle/sections/create-section": {
+      "maxDuration": 60
+    }
+  }
+}
