@@ -1,3 +1,4 @@
+/* eslint-disable  @typescript-eslint/naming-convention */
 import OpenAI from "openai";
 
 interface Message {
@@ -26,9 +27,14 @@ export default async function openAiService({
 
   try {
     const response = await openai.chat.completions.create({
+      frequency_penalty: 0,
+      max_completion_tokens: 2048,
       messages,
       model,
+      presence_penalty: 0,
       store,
+      temperature: 1,
+      top_p: 1,
     });
 
     return response.choices[0].message;

@@ -44,14 +44,13 @@ const jsonSchema = z.object({
 });
 
 /**
- * Validates if a given string is a valid JSON and matches a specific schema.
- * @param input - The JSON string to validate.
- * @returns A boolean indicating whether the JSON is valid and correctly structured.
+ * Validates if a given object matches the expected schema.
+ * @param input - The object to validate.
+ * @returns A boolean indicating whether the object matches the schema.
  */
-export function isValidStructuredJSON(input: string): boolean {
+export function isValidStructuredJSON(input: unknown): boolean {
   try {
-    const parsed = JSON.parse(input);
-    jsonSchema.parse(parsed);
+    jsonSchema.parse(input);
     return true;
   } catch (error) {
     console.error("Invalid JSON structure:", error);

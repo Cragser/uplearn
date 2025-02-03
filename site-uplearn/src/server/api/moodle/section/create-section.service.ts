@@ -2,8 +2,11 @@
 import withMoodleErrorHandler from "@/src/server/wrappers/moodle/with-moodle-error-handler";
 import { moodlePost } from "@/src/server/adapter/axios/moodle/moodle-post";
 import { moodleGet } from "@/src/server/adapter/axios/moodle/moodle-get";
-import { aiChatService } from "@/src/server/api/ai/ai-chat.service";
-import { englishWordPrompt } from "@/src/server/api/ai/promp/english-word.promp";
+
+import getContentLearnServiceOA from "@/src/server/api/ai/open-ai/get-content-learn.service";
+import getContentLearnDeepSeekService from "@/src/server/api/ai/deepseek/get-content-learn.deepsek.service";
+
+const USE_OPEN_AI = process.env.AI_MODEL === "openai";
 
 interface Params {
   courseid: number;
@@ -16,7 +19,9 @@ async function createSectionService({
   courseid,
   title,
 }: Params): Promise<unknown> {
-  const aiResponse = await aiChatService(cards, englishWordPrompt);
+  const aiResponse = USE_OPEN_AI
+    ? await getContentLearnServiceOA(cards)
+    : await getContentLearnDeepSeekService(cards);
 
   const sectionResponse = await moodlePost<unknown>(
     "local_wsmanagesections_create_sections",
