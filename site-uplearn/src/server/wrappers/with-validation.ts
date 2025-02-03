@@ -14,7 +14,6 @@ const withValidation = (
   handler: NextApiHandler,
 ): NextApiHandler => {
   return async (req: NextApiRequest, res: NextApiResponse) => {
-    console.log(req.body);
     const { methods, requiredFields } = options;
 
     if (!methods.includes(req.method || "")) {

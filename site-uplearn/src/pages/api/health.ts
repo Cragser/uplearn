@@ -24,7 +24,7 @@ export default function handler(
       timestamp: new Date().toISOString(),
     });
   } catch (error) {
-    console.log(error);
+    console.warn(error);
     res.status(500).json({
       status: "error",
       timestamp: new Date().toISOString(),

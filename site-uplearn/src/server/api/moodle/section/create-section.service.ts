@@ -16,9 +16,7 @@ async function createSectionService({
   courseid,
   title,
 }: Params): Promise<unknown> {
-  console.log(cards);
   const aiResponse = await aiChatService(cards, englishWordPrompt);
-  console.log({ aiResponse });
 
   const sectionResponse = await moodlePost<unknown>(
     "local_wsmanagesections_create_sections",

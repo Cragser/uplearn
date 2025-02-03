@@ -3,11 +3,13 @@ import AnkiCardGallery from "@/src/client/module/anki/card-gallery/anki-card-gal
 import { CourseSelector } from "@/src/client/module/moodle/course-selector/course-selector";
 import SelectedCard from "@/src/client/components/anki/card/selected-card";
 import { Header } from "../client/components/header/header";
+import { ServicesWarning } from "@/src/client/components/services/services-warning";
 
 export default async function HomePage() {
   return (
     <div className="container mx-auto gap 8">
       <Header />
+      <ServicesWarning />
       <section className="flex justify-between gap-16 mt-8">
         <section className="flex flex-col gap-4 justify-start min-w-[20rem]">
           <DeckSelector />

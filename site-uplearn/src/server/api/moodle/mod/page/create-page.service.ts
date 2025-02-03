@@ -19,8 +19,7 @@ export const createPage = async () => {
         wstoken: getMoodleToken(),
       },
     });
-
-    console.log("Curso creado:", response.data);
+    return response.data;
   } catch (error) {
     console.error("Error creando curso:", error);
   }

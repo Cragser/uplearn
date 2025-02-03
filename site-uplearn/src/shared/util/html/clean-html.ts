@@ -1,7 +1,6 @@
 import sanitizeHtml from "sanitize-html";
 
 export function cleanHtml(html: string): string {
-  console.log(html);
   let cleanedHtml = sanitizeHtml(html, {
     allowedAttributes: {},
     allowedTags: [],

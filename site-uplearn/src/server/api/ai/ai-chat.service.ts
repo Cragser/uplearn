@@ -11,7 +11,6 @@ export async function aiChatService(
   systemMessage: string,
 ): Promise<DeepSeekResponse> {
   const isAiEnabled = process.env.IS_AI_ENABLED === "true";
-
   if (!isAiEnabled) {
     const response = cleanDeepSeekThink(content);
     if (response === null) {
@@ -34,7 +33,6 @@ export async function aiChatService(
   try {
     // @ts-expect-error This is an azure implementation
     const client = new ModelClient(endpoint, new AzureKeyCredential(apiKey));
-
     const response = await client.path("/chat/completions").post({
       body: {
         // eslint-disable-next-line @typescript-eslint/naming-convention
@@ -75,7 +73,7 @@ export async function aiChatService(
 
     return cleanedResponse;
   } catch (error) {
-    console.error("Error in aiChatService:", error);
+    // console.error("Error in aiChatService:", error);
     throw new Error(`Failed to process chat request: ${get(error, "message")}`);
   }
 }

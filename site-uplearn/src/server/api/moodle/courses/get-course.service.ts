@@ -45,7 +45,6 @@ export async function getCourses(): Promise<Course[]> {
     const t = response
       .filter((course) => course.format === "topics")
       .map(transformCourse);
-    console.log(t);
     return t;
   } catch (error) {
     if (error instanceof AxiosError) {
