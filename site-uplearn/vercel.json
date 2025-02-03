@@ -3,9 +3,6 @@
     "app/api/moodle/sections/create-section": {
       "maxDuration": 60
     },
-    "api/moodle/sections/create-section": {
-      "maxDuration": 60
-    },
     "app/api/**/*": {
       "maxDuration": 5
     }
