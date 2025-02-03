@@ -52,7 +52,6 @@ yarn-debug.log
 yarn-error.log
 
 # Data directories
-# /moodle_data/
 /postgresql_data/
 /logs/
 
@@ -61,16 +60,12 @@ yarn-error.log
 *.pyc
 *.pyo
 
-# Moodle specific directories
-/moodledata/filedir/
-/moodledata/cache/
-/moodledata/localcache/
-/moodledata/temp/
-/moodledata/trashdir/
-/moodledata/sessions/
+# Moodle data directories (except local)
+/moodle_data/*
+!/moodle_data/local/
 
 # Moodle config and runtime files
-# config.php
-# version.php
-# install.php
-# .htaccess
+config.php
+version.php
+install.php
+.htaccess

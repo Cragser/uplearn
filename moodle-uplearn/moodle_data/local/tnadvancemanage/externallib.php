@@ -1,9 +1,9 @@
 <?php
 
-require_once(__DIR__ . '/classes/external/page_api.php');
-require_once(__DIR__ . '/classes/external/glossary_api.php');
-require_once(__DIR__ . '/classes/external/database_api.php');
-require_once(__DIR__ . '/classes/external/quiz_api.php');
+require_once($CFG->dirroot . '/local/tnadvancemanage/classes/external/page_api.php');
+require_once($CFG->dirroot . '/local/tnadvancemanage/classes/external/glossary_api.php');
+require_once($CFG->dirroot . '/local/tnadvancemanage/classes/external/database_api.php');
+require_once($CFG->dirroot . '/local/tnadvancemanage/classes/external/quiz_api.php');
 
 /**
  * External functions for the tnadvancemanage plugin

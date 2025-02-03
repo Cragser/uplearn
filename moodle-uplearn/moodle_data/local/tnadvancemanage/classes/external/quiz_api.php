@@ -16,7 +16,6 @@ namespace local_tnadvancemanage\external;
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 define('QUIZ_REVIEW_IMMEDIATELY', 0x10000);
-define('QUIZ_GRADEHIGHEST', 1);
 
 defined('MOODLE_INTERNAL') || die();
 

@@ -21,7 +21,6 @@ defined('MOODLE_INTERNAL') || die();
 require_once($CFG->libdir . '/externallib.php');
 require_once($CFG->dirroot . '/course/modlib.php');
 
-use external_api;
 use external_function_parameters;
 use external_value;
 use external_single_structure;

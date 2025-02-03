@@ -8,7 +8,7 @@ export default async function HomePage() {
     <div className="container mx-auto py-8">
       <h1 className="text-4xl font-bold mb-8">Anki Decks</h1>
       <section className="flex justify-between gap-16">
-        <section className="flex flex-col gap-4 justify-start">
+        <section className="flex flex-col gap-4 justify-start min-w-[20rem]">
           <DeckSelector />
           <CourseSelector />
         </section>

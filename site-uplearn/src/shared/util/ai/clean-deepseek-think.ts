@@ -1,4 +1,5 @@
 import { DeepSeekResponse } from "../../../server/types/ai/deep-seek.response";
+import { isValidStructuredJSON } from "../../../domain/validation/deep-seek-response.validation";
 
 /**
  * Extracts and returns the JSON object from the input string.
@@ -28,8 +29,9 @@ export function cleanDeepSeekThink(input: string): DeepSeekResponse | null {
     if (!jsonContent) {
       return null;
     }
-    // Parse and return the JSON content
-    return JSON.parse(jsonContent);
+    // Parse and validate the JSON content
+    const parsedJson = JSON.parse(jsonContent);
+    return isValidStructuredJSON(jsonContent) ? parsedJson : null;
   } catch (error) {
     console.error("Error parsing JSON:", error);
     return null;

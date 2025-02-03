@@ -37,7 +37,7 @@ async function createSectionService({
     courseid: courseid,
     sections: [
       {
-        name: title,
+        name: aiResponse.page.name + " - " + title,
         section: section.sectionid,
         summary: `${aiResponse.section.summary} - Created by API`,
         summaryformat: 1,
@@ -78,7 +78,9 @@ async function createSectionService({
     sectionid: section.sectionid,
   });
 
-  return section;
+  return {
+    id: section.sectionid,
+  };
 }
 
 // @ts-expect-error This is a temporal response

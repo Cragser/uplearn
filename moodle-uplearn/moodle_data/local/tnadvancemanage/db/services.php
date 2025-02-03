@@ -18,32 +18,36 @@ defined('MOODLE_INTERNAL') || die();
 
 $functions = [
     'local_tnadvancemanage_create_page' => [
-        'classname' => 'local_tnadvancemanage\external\page_api',
+        'classname' => 'local_tnadvancemanage_external',
         'methodname' => 'create_page',
+        'classpath' => 'local/tnadvancemanage/classes/external/page_api.php',
         'description' => 'Creates a new page in a course section',
         'type' => 'write',
         'ajax' => true,
         'capabilities' => 'moodle/course:manageactivities'
     ],
     'local_tnadvancemanage_create_glossary' => [
-        'classname' => 'local_tnadvancemanage\external\glossary_api',
+        'classname' => 'local_tnadvancemanage_external',
         'methodname' => 'create_glossary',
+        'classpath' => 'local/tnadvancemanage/classes/external/glossary_api.php',
         'description' => 'Creates a new glossary in a course section',
         'type' => 'write',
         'ajax' => true,
         'capabilities' => 'moodle/course:manageactivities'
     ],
     'local_tnadvancemanage_create_database' => [
-        'classname' => 'local_tnadvancemanage\external\database_api',
+        'classname' => 'local_tnadvancemanage_external',
         'methodname' => 'create_database',
+        'classpath' => 'local/tnadvancemanage/classes/external/database_api.php',
         'description' => 'Creates a new database in a course section',
         'type' => 'write',
         'ajax' => true,
         'capabilities' => 'moodle/course:manageactivities'
     ],
     'local_tnadvancemanage_create_quiz' => [
-        'classname' => 'local_tnadvancemanage\external\quiz_api',
+        'classname' => 'local_tnadvancemanage_external',
         'methodname' => 'create_quiz',
+        'classpath' => 'local/tnadvancemanage/classes/external/quiz_api.php',
         'description' => 'Creates a new quiz in a course section',
         'type' => 'write',
         'ajax' => true,
