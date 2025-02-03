@@ -80,11 +80,11 @@ export async function findCards(deck: string): Promise<AnkiCard[]> {
   const findCardsResponse = await axios.post(ankiUrl, {
     action: "findCards",
     params: {
-      query: `deck:"${deck}" `,
+      query: `deck:"${deck}"`,
     },
     version: 6,
   });
-  const cardIds = findCardsResponse.data.result;
+  const cardIds = findCardsResponse.data.result.slice(0, 20);
   await new Promise((resolve) => setTimeout(resolve, 100));
   const cardsInfoResponse = await axios.post(ankiUrl, {
     action: "cardsInfo",
